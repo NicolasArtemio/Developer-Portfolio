@@ -9,7 +9,7 @@ const projectsData = [
     title: "E-commerce de Zapatos",
     description: "Plataforma de venta en línea moderna y responsiva.",
     technologies: ["React", "Node.js", "MongoDB"],
-    imageSrc: "[URL_IMAGEN_1]", // Reemplaza con una URL real o import de tu imagen
+    imageSrc: "../../public/barber.png",
     liveUrl: "#",
     repoUrl: "#",
   },
