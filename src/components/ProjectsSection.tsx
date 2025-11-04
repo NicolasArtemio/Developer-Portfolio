@@ -18,7 +18,7 @@ const projectsData = [
     title: "App de Tareas Diarias",
     description: "Organiza tu día con facilidad y eficiencia.",
     technologies: ["React", "SwiftUI", "Firebase"],
-    imageSrc: "[URL_IMAGEN_2]",
+    imageSrc: "../../public/sp.png",
     liveUrl: "#",
     repoUrl: "#",
   },
