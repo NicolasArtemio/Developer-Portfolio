@@ -1,0 +1,47 @@
+{
+  "translation": {
+    "lang": "Language"
+  },
+  "hero": {
+    "role": "Fullstack Dev",
+    "tagline": "Developing complete end-to-end solutions.",
+    "architecture": "Clean Architecture",
+    "cta_button": "View Featured Projects"
+  },
+
+  "skills": {
+    "main_title": "Technical Skills",
+    "main_description": "The tools I use to transform ideas into digital reality.",
+
+    "cards": [
+      {
+        "title": "Frontend Development",
+        "description": "Creation of attractive and responsive user interfaces."
+      },
+      {
+        "title": "Backend & Data",
+        "description": "Design of robust APIs and efficient data management."
+      },
+      {
+        "title": "Tools and Others",
+        "description": "Proficiency in collaborative development tools and version control."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "tagline": "A selection of my recent work in development and design.",
+    "tab": "All Projects"
+  },
+  "contact": {
+    "title": "Contact",
+
+    "name_placeholder": "Name",
+    "email_placeholder": "Email",
+    "message_placeholder": "Message",
+    "submit_button": "Send Message",
+
+    "other_options_title": "Other Options",
+    "other_options_text": "If you prefer to contact me directly, here is my information:"
+  }
+}

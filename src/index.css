@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@media (min-width: 1920px) {
+  #contacto {
+    padding-left: 19.5rem;
+    padding-right: 19.5rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  #contacto {
+    padding-left: 40rem;
+    padding-right: 40rem;
+  }
+}
