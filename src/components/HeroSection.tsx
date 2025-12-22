@@ -13,7 +13,7 @@ const HeroSection = () => {
         <h1 className="text-5xl font-bold flex flex-wrap items-center mb-6 w-full text-center">
           <span className="text-[#321a3f] mr-4">&gt;</span>
           <span className="text-[#321a3f]">Nicolás</span>
-          <span className="text-gray-400 mx-2">|</span>
+          <span className="text-[#321a3f] mx-2">|</span>
           <span className="text-[#321a3f]">{t("hero.role")}</span>
           {/* Cursor ahora es oscuro */}
           <span className="w-3 h-12 bg-[#321a3f] hidden md:inline-block ml-2 animate-blink"></span>
