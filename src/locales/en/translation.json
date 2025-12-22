@@ -2,6 +2,16 @@
   "translation": {
     "lang": "Language"
   },
+  "navbar": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Full Stack Developer with a focus on TypeScript, React, and NestJS. Experienced in designing scalable architectures, payment systems, and secure authentication flows. My goal is to combine solid technical backend skills with high-conversion frontend interfaces, preparing myself to lead the future of technology as a Tech Lead."
+  },
   "hero": {
     "role": "Fullstack Dev",
     "tagline": "Developing complete end-to-end solutions.",
@@ -43,5 +53,10 @@
 
     "other_options_title": "Other Options",
     "other_options_text": "If you prefer to contact me directly, here is my information:"
+  },
+  "footer": {
+    "copyright": "© {{year}} <span className=\"text-[#1F1D2B]\">Nicolás</span> — <span className=\"ml-1\">Fullstack Developer</span>",
+    "status": "Available for Projects"
   }
+
 }

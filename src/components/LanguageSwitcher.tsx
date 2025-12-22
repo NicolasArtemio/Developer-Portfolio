@@ -10,7 +10,7 @@ const LanguageSwitcher = () => {
   const { t } = useTranslation();
   const isActive = (lng: string) =>
     i18n.language === lng
-      ? "bg-green-400 text-gray-900 font-bold"
+      ? "bg-[#a75ec1] text-white font-bold"
       : "bg-gray-700 text-white hover:bg-gray-600";
   return (
     <div>
@@ -30,7 +30,7 @@ const LanguageSwitcher = () => {
         EN
       </button>
 
-      <small className="ml-2 text-green-500">
+      <small className="ml-2 text-[#a75ec1]">
         ({i18n.language.toUpperCase()})
       </small>
     </div>

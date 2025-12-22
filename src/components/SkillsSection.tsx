@@ -13,6 +13,7 @@ type SkillCardData = { title: string; description: string };
 const SkillsData = [
   {
     icon: faCode,
+    color: "bg-[#2DD4BF]", // Turquesa para Frontend
     technologies: [
       "React",
       "TypeScript",
@@ -24,6 +25,7 @@ const SkillsData = [
   },
   {
     icon: faDatabase,
+    color: "bg-[#A855F7]", // Morado para Backend
     technologies: [
       "Node.js",
       "NestJs",
@@ -35,6 +37,7 @@ const SkillsData = [
   },
   {
     icon: faPuzzlePiece,
+    color: "bg-gray-400", // Gris para Herramientas
     technologies: [
       "Git",
       "GitHub",
@@ -50,12 +53,10 @@ const SkillsData = [
 const SkillsSection = () => {
   const { t } = useTranslation();
 
-  // Traducción de las tarjetas desde i18n
   const translatedCards = t("skills.cards", {
     returnObjects: true,
   }) as SkillCardData[];
 
-  // Combina datos fijos con traducciones
   const skillsData = SkillsData.map((fixedSkill, index) => ({
     ...fixedSkill,
     title: translatedCards[index]?.title || "Error Title",
@@ -63,19 +64,26 @@ const SkillsSection = () => {
   }));
 
   return (
-    <section className="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
+    /* Cambié bg-gray-900 por un gris muy suave (F3F4F6) */
+    <section className="bg-[#F3F4F6] py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-green-400 mb-2 flex items-center">
-          <FontAwesomeIcon icon={faToolbox} className="mr-4" />
-          {t("skills.main_title")}
-        </h2>
+        
+        {/* Cabecera con el nuevo color Turquesa y texto oscuro */}
+        <div className="flex flex-col mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-[#1F1D2B] mb-4 flex items-center">
+            <div className="p-3 bg-[#2DD4BF] text-white rounded-2xl mr-5 shadow-lg shadow-cyan-500/20">
+              <FontAwesomeIcon icon={faToolbox} />
+            </div>
+            {t("skills.main_title")}
+          </h2>
+          <p className="text-xl text-gray-500 max-w-2xl">
+            {t("skills.main_description")}
+          </p>
+        </div>
 
-        <p className="text-xl text-gray-500 mb-12">
-          {t("skills.main_description")}
-        </p>
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {skillsData.map((skill, index) => (
+            /* Asegúrate de que SkillCard acepte el nuevo 'color' si quieres usarlo para bordes o fondos */
             <SkillCard key={index} skill={skill} />
           ))}
         </div>
