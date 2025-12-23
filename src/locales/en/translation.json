@@ -38,6 +38,17 @@
       }
     ]
   },
+
+  "projectd": [
+    {
+      "title": "Barber & Bookings",
+      "description": "Modern landing page with integrated booking system",
+      "technologies": ["SVELTE", "CALENDLY", "CSS/TAILWIND"],
+      "imageSrc": "/barber.png",
+      "liveUrl": "https://labarber-rho.vercel.app/",
+      "repoUrl": "https://github.com/nicod12/labarber"
+    }
+  ],
   "projects": {
     "title": "Featured Projects",
     "tagline": "A selection of my recent work in development and design.",

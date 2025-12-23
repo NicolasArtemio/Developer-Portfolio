@@ -29,7 +29,7 @@ const HeroSection = () => {
         {/* Íconos Sociales: Ahora en gris que cambia a morado al pasar el mouse */}
         <div className="flex justify-center space-x-6 pt-6">
           <a
-            href="[URL_GITHUB]"
+            href="https://github.com/NicolasArtemio"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#321a3f] hover:text-[#A855F7] transition-all transform hover:scale-110"
@@ -37,7 +37,7 @@ const HeroSection = () => {
             <Github className="w-8 h-8" />
           </a>
           <a
-            href="[URL_LINKEDIN]"
+            href="https://www.linkedin.com/in/nicolas-artemio-dume-626223371/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#321a3f] hover:text-[#A855F7] transition-all transform hover:scale-110"

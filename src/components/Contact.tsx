@@ -111,8 +111,8 @@ function Contact({ form, handleSubmit, handleChange }: Props) {
 
             <div className="space-y-4">
               {[
-                { href: "mailto:tu.email@ejemplo.com", icon: Mail, label: "tu.email@ejemplo.com" },
-                { href: "https://linkedin.com/in/tuperfil", icon: Linkedin, label: "LinkedIn Profile" }
+                { href: "mailto:nicolasartemiodume@gmail.com", icon: Mail, label: "nicolasartemiodume@gmail.com" },
+                { href: "https://www.linkedin.com/in/nicolas-artemio-dume-626223371/", icon: Linkedin, label: "LinkedIn" }
               ].map((item, idx) => (
                 <motion.a
                   key={idx}

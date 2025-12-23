@@ -4,44 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRocket } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 
-// Definimos los datos (los mismos que ya tienes)
-const projectsData = [
-  {
-    id: 1,
-    title: "E-commerce de Zapatos",
-    description: "Plataforma de venta en línea moderna y responsiva.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    imageSrc: "/barber.png",
-    liveUrl: "#",
-    repoUrl: "#",
-  },
-  {
-    id: 2,
-    title: "App de Tareas Diarias",
-    description: "Organiza tu día con facilidad y eficiencia.",
-    technologies: ["React", "SwiftUI", "Firebase"],
-    imageSrc: "/sp.png",
-    liveUrl: "#",
-    repoUrl: "#",
-  },
-  {
-    id: 3,
-    title: "Dashboard de Analíticas",
-    description: "Visualización de datos clave para la toma de decisiones.",
-    technologies: ["Python", "Pandas", "D3.js"],
-    imageSrc: "/analytics.png",
-    liveUrl: "#",
-    repoUrl: "#",
-  },
-];
-
 // 1. Variantes para el contenedor (Stagger)
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2, // Cada hijo aparece 0.2s después del anterior
+      staggerChildren: 0.2,
     },
   },
 };
@@ -59,11 +28,42 @@ const headerVariants: Variants = {
 const ProjectsSection = () => {
   const { t } = useTranslation();
 
+  // Movimos los datos aquí dentro para que t() funcione correctamente
+  const projectsData = [
+    {
+      id: 1,
+      title: t("projectd.title"), // Asegúrate que en tu JSON existan estas llaves
+      description: t("projectd.description"),
+      technologies: ["Svelte", "Calendly", "Tailwind"], // Las tecnologías suelen ser fijas
+      imageSrc: "/barber.png",
+      liveUrl: "https://labarber-rho.vercel.app/",
+      repoUrl: "https://github.com/nicod12/labarber",
+    },
+    {
+      id: 2,
+      title: t("projects.tasks_title"), // Ejemplo de llaves consistentes
+      description: t("projects.tasks_desc"),
+      technologies: ["React", "Firebase"],
+      imageSrc: "/sp.png",
+      liveUrl: "#",
+      repoUrl: "#",
+    },
+    {
+      id: 3,
+      title: t("projects.dashboard_title"),
+      description: t("projects.dashboard_desc"),
+      technologies: ["Python", "D3.js"],
+      imageSrc: "/analytics.png",
+      liveUrl: "#",
+      repoUrl: "#",
+    },
+  ];
+
   return (
     <section id="proyectos" className="bg-white py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
-        {/* Encabezado animado individualmente */}
+        {/* Encabezado animado */}
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -72,7 +72,6 @@ const ProjectsSection = () => {
           className="flex flex-col mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-black text-[#1F1D2B] mb-4 flex items-center">
-            {/* Animación de pulso en el cohete */}
             <motion.div 
               whileHover={{ rotate: 15, scale: 1.1 }}
               className="p-3 bg-[#A855F7] text-white rounded-2xl mr-5 shadow-lg shadow-purple-500/20"
@@ -86,7 +85,7 @@ const ProjectsSection = () => {
           </p>
         </motion.div>
 
-        {/* Tab / Filtro estilizado */}
+        {/* Tab / Filtro */}
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +98,7 @@ const ProjectsSection = () => {
           </button>
         </motion.div>
 
-        {/* Grid de Proyectos con STAGGER */}
+        {/* Grid de Proyectos */}
         <motion.div 
           className="grid gap-10 lg:grid-cols-3 md:grid-cols-2"
           variants={containerVariants}

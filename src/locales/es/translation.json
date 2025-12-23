@@ -37,6 +37,16 @@
       }
     ]
   },
+  "projectd": [
+    {
+      "title": "Barbería & Reservas",
+      "description": "Landing page moderna con sistema de turnos integrado",
+      "technologies": ["SVELTE", "CALENDLY", "CSS/TAILWIND"],
+      "imageSrc": "/barber.png",
+      "liveUrl": "https://labarber-rho.vercel.app/",
+      "repoUrl": "https://github.com/nicod12/labarber"
+    }
+  ],
   "projects": {
     "title": "Proyectos Destacados",
     "tagline": "Una selección de mi trabajo reciente en desarrollo y diseño.",
