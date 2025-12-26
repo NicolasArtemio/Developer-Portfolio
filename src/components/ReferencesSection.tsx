@@ -54,7 +54,7 @@ const ReferencesSection = () => {
   ];
 
   return (
-    <section id="referencias" className="bg-[#f8f9fa] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="refer" className="bg-[#f8f9fa] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={headerVariants} className="flex flex-col mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-[#1F1D2B] mb-4 flex items-center">

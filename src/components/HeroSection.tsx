@@ -6,7 +6,7 @@ const HeroSection = () => {
 
   return (
     // Se quitó el fondo oscuro y se cambió por un contenedor flexible
-    <section className="flex flex-col items-center justify-center text-[#1F2937]">
+    <section id="home" className="flex flex-col items-center justify-center text-[#1F2937]">
       <div className="text-left font-sans space-y-4 max-w-xl">
         
         {/* Título: Cambié green-400 por purple-500 y el color de Nicolás a oscuro */}
@@ -49,7 +49,7 @@ const HeroSection = () => {
         {/* Botón: Cambié verde por turquesa vibrante y sombra suave */}
         <div className="pt-12 flex justify-center">
           <a
-            href="#proyectos"
+            href="#projects"
             className="px-8 py-4 bg-[#2DD4BF] text-white font-extrabold rounded-xl shadow-lg shadow-[#24b3a2] hover:bg-[#24b3a2] transition-all transform hover:-translate-y-1 flex items-center justify-center w-fit"
           >
             {t("hero.cta_button")}

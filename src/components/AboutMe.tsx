@@ -5,7 +5,7 @@ const AboutMe = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col items-center w-full overflow-hidden py-10">
+    <div id="about" className="flex flex-col items-center w-full overflow-hidden py-10">
       <div className="max-w-md w-full">
         
         {/* FOTO: Con efecto de flote infinito */}

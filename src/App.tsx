@@ -9,6 +9,7 @@ import {
 import HeroSection from "./components/HeroSection";
 import AboutMe from "./components/AboutMe";
 import ReferencesSection from "./components/ReferencesSection";
+import ContactContainer from "./components/ContactContainer";
 
 export default function App() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -57,11 +58,7 @@ export default function App() {
         <SkillsSection />
         <ProjectsSection />
         <ReferencesSection />
-        <Contact
-          form={form}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-        />
+        <ContactContainer />
         <Footer />
       </div>
     </div>
