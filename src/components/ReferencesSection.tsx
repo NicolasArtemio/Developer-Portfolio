@@ -80,9 +80,6 @@ const ReferencesSection = () => {
 
               <div className="flex items-center justify-between mt-auto border-t border-gray-50 pt-6">
                 <div className="flex items-center">
-                  <div className="w-14 h-14 rounded-full bg-gray-200 mr-4 overflow-hidden border-2 border-[#2DD4BF]">
-                    <img src={extraInfo[index]?.img} alt={ref.name} className="w-full h-full object-cover" />
-                  </div>
                   <div>
                     <h4 className="font-bold text-[#1F1D2B] text-lg">{ref.name}</h4>
                     <p className="text-[#A855F7] font-semibold text-sm">{ref.position}</p>
