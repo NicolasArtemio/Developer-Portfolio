@@ -47,12 +47,58 @@
       "imageSrc": "/barber.png",
       "liveUrl": "https://labarber-rho.vercel.app/",
       "repoUrl": "https://github.com/nicod12/labarber"
+    },
+    {
+      "title": "Supermercado ANLAS",
+      "description": "E-commerce platform for a local supermarket",
+      "technologies": ["REACT", "FIREBASE"],
+      "imageSrc": "/sp.png",
+      "liveUrl": "https://andreaguinder.github.io/supermercado-andy-nico/",
+      "repoUrl": "https://github.com/andreaguinder/supermercado-andy-nico"
+    },
+    {
+      "title": "Veterinary Clinic Digitalization Platform",
+      "description": "Veterinary management platform with digitalization of clinic operations",
+      "technologies": ["NESTJS", "TYPEORM", "SOCKET.IO", "MYSQL", "MERCADOPAGO"],
+      "imageSrc": "/vet.png",
+      "liveUrl": "https://github.com/NicolasArtemio/apiv1-vet",
+      "repoUrl": "https://github.com/NicolasArtemio/apiv1-vet"
     }
   ],
   "projects": {
     "title": "Featured Projects",
     "tagline": "A selection of my recent work in development and design.",
     "tab": "All Projects"
+  },
+  "references": {
+    "title": "References",
+    "tagline": "What my colleagues say about working with me.",
+    "reference":[
+      {
+  "references": {
+    "title": "References",
+    "tagline": "What my colleagues say about working with me.",
+    "reference":[
+      {
+      "name": "Jonathan Padin",
+      "position": "Full Stack Developer",
+      "quote": "I had the opportunity to work with Nicolas on several programming projects, and it was a very rewarding experience. He is a committed, responsible professional with an excellent attitude toward teamwork. He always contributes ideas and helps the team whenever needed, maintaining a collaborative spirit throughout the entire development process. Moreover, he shows a strong drive to constantly learn and improve. He is undoubtedly a pleasure to work with, and I highly recommend him for any development project."
+    },
+    {
+      "name": "María Briceño",
+      "position": "Full Stack Developer",
+      "quote": "Working with Nicolas Dume as the leader and Team Lead for the Veterinary API project was a very positive experience. He stood out for his organizational skills, leadership, and clear communication with the team. He effectively coordinated tasks, supported the development process, and maintained a great working environment, allowing the project to move forward in an orderly and efficient manner."
+    },
+    {
+      "name": "Andrea Belén Guinder Vichich",
+      "position": "Frontend Developer",
+      "quote": "I had the pleasure of working alongside Nicolás on a Mobile-First web project using HTML, CSS, JavaScript, and JSON. What I highlight most about his profile is his analytical capacity and his impressive mastery of JavaScript; his skill in programming logic and data manipulation was key to structuring clean and efficient code."
+    }
+    ]
+   
+  }
+}
+    ]
   },
   "contact": {
     "title": "Contact",

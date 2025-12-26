@@ -21,7 +21,6 @@
   "skills": {
     "main_title": "Habilidades Técnicas",
     "main_description": "Las herramientas que utilizo para transformar ideas en realidad digital.",
-
     "cards": [
       {
         "title": "Frontend Development",
@@ -41,10 +40,42 @@
     {
       "title": "Barbería & Reservas",
       "description": "Landing page moderna con sistema de turnos integrado",
-      "technologies": ["SVELTE", "CALENDLY", "CSS/TAILWIND"],
+      "technologies": [
+        "SVELTE",
+        "CALENDLY",
+        "CSS/TAILWIND"
+      ],
       "imageSrc": "/barber.png",
       "liveUrl": "https://labarber-rho.vercel.app/",
       "repoUrl": "https://github.com/nicod12/labarber"
+    },
+    {
+      "title": "Supermercado ANLAS",
+      "description": "Sistema de e-commerce para un supermercado local",
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "Bootstrap",
+        "JavaScript"
+      ],
+      "imageSrc": "/sp.png",
+      "liveUrl": "https://andreaguinder.github.io/supermercado-andy-nico/",
+      "repoUrl": "https://github.com/andreaguinder/supermercado-andy-nico"
+    },
+    {
+      "title": "Sistema de gestión veterinaria",
+      "description": "Plataforma de gestión veterinaria y digitalización de procesos clínicos.",
+      "technologies": [
+        "NestJS",
+        "TypeScript",
+        "TypeORM",
+        "Socket.io",
+        "MySQL",
+        "Mercado Pago"
+      ],
+      "imageSrc": "/sp.png",
+      "liveUrl": "https://github.com/NicolasArtemio/apiv1-vet",
+      "repoUrl": "https://github.com/NicolasArtemio/apiv1-vet"
     }
   ],
   "projects": {
@@ -52,14 +83,33 @@
     "tagline": "Una selección de mi trabajo reciente en desarrollo y diseño.",
     "tab": "Todos"
   },
+  "references": {
+    "title": "Referencias",
+    "tagline": "Lo que dicen mis colegas sobre trabajar conmigo en equipo.",
+    "reference": [
+      {
+        "name": "Jonathan Padin",
+        "position": "Desarrollador Full Stack",
+        "quote": "Tuve la oportunidad de trabajar con Nicolas en proyectos de programación y fue una experiencia muy gratificante. Es una persona comprometida, responsable y con muy buena predisposición para el trabajo en equipo. Siempre aporta ideas, ayuda cuando alguien o el equipo lo necesita, manteniendo una actitud colaborativa durante todo el desarrollo del proyecto. Además, muestra muchas ganas de aprender y mejorar constantemente. Sin dudas, es alguien con quien da gusto trabajar y a quien recomiendo para cualquier proyecto de desarrollo."
+      },
+      {
+        "name": "María Briceño",
+        "position": "Desarrolladora Full Stack",
+        "quote": "Trabajar con Nicolas Dume como líder y team máster del proyecto de la API Veterinaria fue una experiencia muy positiva. Se destacó por su capacidad de organización, liderazgo y comunicación clara con el equipo. Supo coordinar tareas, acompañar el proceso de desarrollo y mantener un buen clima de trabajo, permitiendo que el proyecto avanzara de manera ordenada y eficiente."
+      },
+      {
+        "name": "Andrea Belén Guinder Vichich",
+        "position": "Desarrolladora Frontend",
+        "quote": "Tuve el placer de trabajar junto a Nicolás en el desarrollo de un proyecto web con orientación Mobile First, utilizando HTML, CSS, JavaScript y JSON. Lo que más destaco de su perfil es su capacidad analítica y su impresionante dominio de JavaScript; su destreza en la lógica de programación y la manipulación de datos fue clave para estructurar un código limpio y eficiente."
+      }
+    ]
+  },
   "contact": {
     "title": "Contacto",
-
     "name_placeholder": "Nombre",
     "email_placeholder": "Email",
     "message_placeholder": "Mensaje",
     "submit_button": "Enviar Mensaje",
-
     "other_options_title": "Otras Opciones",
     "other_options_text": "Si prefieres contactarme directamente, aquí están mis datos:"
   },

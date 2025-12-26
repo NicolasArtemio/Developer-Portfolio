@@ -32,8 +32,8 @@ const ProjectsSection = () => {
   const projectsData = [
     {
       id: 1,
-      title: t("projectd.title"), // Asegúrate que en tu JSON existan estas llaves
-      description: t("projectd.description"),
+      title: t("projectd.0.title"), // Asegúrate que en tu JSON existan estas llaves
+      description: t("projectd.0.description"),
       technologies: ["Svelte", "Calendly", "Tailwind"], // Las tecnologías suelen ser fijas
       imageSrc: "/barber.png",
       liveUrl: "https://labarber-rho.vercel.app/",
@@ -41,21 +41,21 @@ const ProjectsSection = () => {
     },
     {
       id: 2,
-      title: t("projects.tasks_title"), // Ejemplo de llaves consistentes
-      description: t("projects.tasks_desc"),
-      technologies: ["React", "Firebase"],
+      title: t("projectd.1.title"), // Ejemplo de llaves consistentes
+      description: t("projectd.1.description"),
+      technologies: ["HTML5", "CSS3","Bootstrap", "JavaScript"],
       imageSrc: "/sp.png",
-      liveUrl: "#",
-      repoUrl: "#",
+      liveUrl: "https://andreaguinder.github.io/supermercado-andy-nico/",
+      repoUrl: "https://github.com/andreaguinder/supermercado-andy-nico",
     },
     {
       id: 3,
-      title: t("projects.dashboard_title"),
-      description: t("projects.dashboard_desc"),
-      technologies: ["Python", "D3.js"],
-      imageSrc: "/analytics.png",
-      liveUrl: "#",
-      repoUrl: "#",
+      title: t("projectd.2.title"),
+      description: t("projectd.2.description"),
+      technologies: ["NestJS", "TypeScript","TypeORM", "Socket.io", "MySQL", "Mercado Pago"],
+      imageSrc: "/veterinary_symbol.svg",
+      liveUrl: "https://github.com/NicolasArtemio/apiv1-vet",
+      repoUrl: "https://github.com/NicolasArtemio/apiv1-vet",
     },
   ];
 

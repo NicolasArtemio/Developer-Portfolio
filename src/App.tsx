@@ -8,6 +8,7 @@ import {
 } from "./components";
 import HeroSection from "./components/HeroSection";
 import AboutMe from "./components/AboutMe";
+import ReferencesSection from "./components/ReferencesSection";
 
 export default function App() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -55,6 +56,7 @@ export default function App() {
       <div className="bg-white">
         <SkillsSection />
         <ProjectsSection />
+        <ReferencesSection />
         <Contact
           form={form}
           handleChange={handleChange}
