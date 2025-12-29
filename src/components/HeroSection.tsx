@@ -6,7 +6,7 @@ const HeroSection = () => {
 
   return (
     // Se quitó el fondo oscuro y se cambió por un contenedor flexible
-    <section id="home" className="flex flex-col items-center justify-center text-[#1F2937]">
+    <section id="home" className="flex flex-col items-center justify-center text-[#1F2937] mt-16 md:mt-0">
       <div className="text-left font-sans space-y-4 max-w-xl">
         
         {/* Título: Cambié green-400 por purple-500 y el color de Nicolás a oscuro */}
