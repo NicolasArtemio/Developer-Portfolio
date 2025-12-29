@@ -8,6 +8,7 @@ interface Props {
   imageSrc: string;
   liveUrl: string;
   technologies: string[];
+  linkText: string;
 }
 
 interface ProjectCardProps {
@@ -61,7 +62,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
           <div className="text-[#A855F7] text-sm font-bold flex items-center justify-center sm:justify-start">
             <span className="relative">
-              Ver Proyecto
+               {project.linkText}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#A855F7] transition-all duration-300 group-hover:w-full"></span>
             </span>
             <FontAwesomeIcon icon={faArrowRight} className="ml-2 text-xs transition-transform duration-300 group-hover:translate-x-2" />

@@ -38,6 +38,7 @@ const ProjectsSection = () => {
       imageSrc: "/barber.png",
       liveUrl: "https://labarber-rho.vercel.app/",
       repoUrl: "https://github.com/nicod12/labarber",
+      linkText: t("projects.linkText"),
     },
     {
       id: 2,
@@ -47,6 +48,7 @@ const ProjectsSection = () => {
       imageSrc: "/sp.png",
       liveUrl: "https://andreaguinder.github.io/supermercado-andy-nico/",
       repoUrl: "https://github.com/andreaguinder/supermercado-andy-nico",
+      linkText: t("projects.linkText"),
     },
     {
       id: 3,
@@ -56,6 +58,7 @@ const ProjectsSection = () => {
       imageSrc: "/veterinary_symbol.svg",
       liveUrl: "https://github.com/NicolasArtemio/apiv1-vet",
       repoUrl: "https://github.com/NicolasArtemio/apiv1-vet",
+      linkText: t("projects.linkText"),
     },
   ];
 

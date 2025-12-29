@@ -69,7 +69,8 @@
   "projects": {
     "title": "Featured Projects",
     "tagline": "A selection of my recent work in development and design.",
-    "tab": "All Projects"
+    "tab": "All Projects",
+    "linkText": "View Project"
   },
 "references": {
     "title": "References",
