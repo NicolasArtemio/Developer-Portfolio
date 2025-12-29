@@ -81,7 +81,7 @@
         "quote": "I had the opportunity to work with Nicolas on several programming projects, and it was a very rewarding experience. He is a committed, responsible professional with an excellent attitude toward teamwork..."
       },
       {
-        "name": "María Briceño",
+        "name": "Marína Briceño",
         "position": "Full Stack Developer",
         "quote": "Working with Nicolas Dume as the leader and Team Master for the Veterinary API project was a very positive experience. He stood out for his organizational skills, leadership, and clear communication with the team. He excelled at coordinating tasks, supporting the development process, and maintaining a great work environment, ensuring the project progressed in an orderly and efficient manner"
       },
@@ -89,6 +89,11 @@
         "name": "Andrea Belén Guinder Vichich",
         "position": "Frontend Developer",
         "quote": "Working with Nicolás on our Mobile-First web project was a great experience. He has an incredible analytical capacity and a strong command of JavaScript. His ability to handle complex logic and data manipulation was essential for building such efficient and clean code"
+      },
+            {
+        "name": "Celeste Ruspil",
+        "position": "Full Stack Developer",
+        "quote": "I want to highlight and recommend Nicolás, with whom I shared two years in the Full Stack Web Development program. Throughout that time, he demonstrated not only high-level technical skills but also exceptional human qualities. He was always willing to help and mentor with patience, which made a key difference in my learning process.Thanks to his constant support, I was able to solidify fundamental concepts, improve my logic as a developer, and gain confidence. His collaborative attitude, commitment, and passion make him an outstanding professional and a great teammate. He undoubtedly adds immense value to any work environment."
       }
     ]
   },

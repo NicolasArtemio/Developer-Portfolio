@@ -51,6 +51,7 @@ const ReferencesSection = () => {
     { id: 1, linkedin: "https://www.linkedin.com/in/jonathan-padin-5a31a0177/", img: "/avatar1.png" },
     { id: 2, linkedin: "https://linkedin.com/in/perfil2", img: "/avatar2.png" },
     { id: 3, linkedin: "https://www.linkedin.com/in/andrea-guinder/", img: "/avatar2.png" },
+    { id: 4, linkedin: "https://www.linkedin.com/in/celeste-ruspil-2b8941230/", img: "/avatar3.png" },
   ];
 
   return (

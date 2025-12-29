@@ -53,7 +53,6 @@ const Navbar = () => {
             { name: t("navbar.projects"), href: "#projects" },
             { name: t("navbar.contact"), href: "#contact" },
             { name: t("navbar.refer"), href: "#refer" },
-            { name: t("navbar.about"), href: "#about" },
           ].map((link) => (
             <a
               key={link.name}

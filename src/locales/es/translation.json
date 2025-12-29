@@ -94,7 +94,7 @@
         "quote": "Tuve la oportunidad de trabajar con Nicolas en proyectos de programación y fue una experiencia muy gratificante. Es una persona comprometida, responsable y con muy buena predisposición para el trabajo en equipo. Siempre aporta ideas, ayuda cuando alguien o el equipo lo necesita, manteniendo una actitud colaborativa durante todo el desarrollo del proyecto. Además, muestra muchas ganas de aprender y mejorar constantemente. Sin dudas, es alguien con quien da gusto trabajar y a quien recomiendo para cualquier proyecto de desarrollo."
       },
       {
-        "name": "María Briceño",
+        "name": "Marína Briceño",
         "position": "Desarrolladora Full Stack",
         "quote": "Trabajar con Nicolas Dume como líder y team máster del proyecto de la API Veterinaria fue una experiencia muy positiva. Se destacó por su capacidad de organización, liderazgo y comunicación clara con el equipo. Supo coordinar tareas, acompañar el proceso de desarrollo y mantener un buen clima de trabajo, permitiendo que el proyecto avanzara de manera ordenada y eficiente."
       },
@@ -102,6 +102,11 @@
         "name": "Andrea Belén Guinder Vichich",
         "position": "Desarrolladora Frontend",
         "quote": "Tuve el placer de trabajar junto a Nicolás en el desarrollo de un proyecto web con orientación Mobile First, utilizando HTML, CSS, JavaScript y JSON. Lo que más destaco de su perfil es su capacidad analítica y su impresionante dominio de JavaScript; su destreza en la lógica de programación y la manipulación de datos fue clave para estructurar un código limpio y eficiente."
+      },
+            {
+        "name": "Celeste Ruspil",
+        "position": "Desarrolladora Full Stack",
+        "quote": "Quiero destacar y recomendar a Nicolás,con quien compartí dos años de la carrera de Desarrollador Web Full Stack. Durante todo ese tiempo demostró no solo un gran nivel técnico, sino también una enorme calidad humana. Siempre estuvo dispuesto a ayudar, enseñar y acompañar con paciencia, lo que hizo una diferencia clave en mi proceso de aprendizaje. Gracias a su apoyo constante aprendí muchísimo y pude afianzar conceptos fundamentales, mejorar mi forma de pensar como programadora y ganar confianza. Su actitud colaborativa, compromiso y pasión por lo que hace lo convierten en un excelente profesional y en un gran compañero de equipo. Sin dudas, una persona que suma valor en cualquier entorno de trabajo."
       }
     ]
   },
