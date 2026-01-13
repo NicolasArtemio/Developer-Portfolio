@@ -27,34 +27,36 @@ const cardVariants: Variants = {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <motion.a
-      variants={cardVariants} // Conectamos las variantes
+      variants={cardVariants}
       href={project.liveUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block p-5 bg-white border border-gray-100 rounded-[2rem] transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10 transform hover:-translate-y-2"
+      className="group block p-5 bg-white/60 dark:bg-white/10 backdrop-blur-xl ring-1 ring-white/20 dark:ring-white/10 rounded-[2rem] transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10 transform hover:-translate-y-2 hover:ring-[#A855F7]/30"
     >
       <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
         {/* ... Resto de tu código (Imagen, Título, Descripción, Techs) se mantiene igual ... */}
         
-        <div className="w-full sm:w-28 sm:h-28 h-40 bg-[#F3F4F6] rounded-2xl overflow-hidden flex-shrink-0 border border-gray-50">
+        <div className="w-full sm:w-28 sm:h-28 h-40 bg-[#F3F4F6] dark:bg-[#0F1319] rounded-2xl overflow-hidden flex-shrink-0 ring-1 ring-gray-100 dark:ring-white/10">
           <img
             src={project.imageSrc}
             alt={`Captura de ${project.title}`}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         </div>
 
         <div className="flex-1 text-center sm:text-left">
-          <h3 className="text-xl font-black text-[#1F1D2B] mb-1 group-hover:text-[#A855F7] transition-colors">
+          <h3 className="text-xl font-black text-[#1F1D2B] dark:text-gray-100 mb-1 group-hover:text-[#A855F7] transition-colors">
             {project.title}
           </h3>
-          <p className="text-gray-500 text-sm mb-4 leading-relaxed font-medium">
+          <p className="text-gray-500 dark:text-gray-300 text-sm mb-4 leading-relaxed font-medium">
             {project.description}
           </p>
 
           <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-4">
             {project.technologies.map((tech, index) => (
-              <span key={index} className="text-[10px] font-black uppercase tracking-wider bg-[#2DD4BF]/10 text-[#24b3a2] px-3 py-1 rounded-lg border border-[#2DD4BF]/20">
+              <span key={index} className="text-[10px] font-black uppercase tracking-wider bg-white/60 dark:bg-white/5 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-lg ring-1 ring-[#2DD4BF]/30 dark:ring-[#2DD4BF]/50">
                 {tech}
               </span>
             ))}

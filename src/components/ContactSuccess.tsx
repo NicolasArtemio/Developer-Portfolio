@@ -12,6 +12,9 @@ const ContactSuccess = ({ open, onClose }: Props) => {
 
   return (
     <motion.div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-success-title"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center"
@@ -24,7 +27,7 @@ const ContactSuccess = ({ open, onClose }: Props) => {
       >
         <CheckCircle size={64} className="text-green-500 mx-auto mb-4" />
 
-        <h3 className="text-2xl font-bold text-[#1F1D2B] mb-2">
+        <h3 id="contact-success-title" className="text-2xl font-bold text-[#1F1D2B] mb-2">
           ¡Mensaje enviado!
         </h3>
 

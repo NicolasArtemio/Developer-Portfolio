@@ -49,22 +49,24 @@ const ReferencesSection = () => {
   // URLs y Fotos (que no cambian por idioma)
   const extraInfo = [
     { id: 1, linkedin: "https://www.linkedin.com/in/jonathan-padin-5a31a0177/", img: "/avatar1.png" },
-    { id: 2, linkedin: "https://linkedin.com/in/perfil2", img: "/avatar2.png" },
+    { id: 2, linkedin: "https://www.linkedin.com/in/marina-brice%C3%B1o-baa9b5336/", img: "/avatar2.png" },
     { id: 3, linkedin: "https://www.linkedin.com/in/andrea-guinder/", img: "/avatar2.png" },
     { id: 4, linkedin: "https://www.linkedin.com/in/celeste-ruspil-2b8941230/", img: "/avatar3.png" },
   ];
 
   return (
-    <section id="refer" className="bg-[#f8f9fa] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="refer" className="section-decor bg-[#f8f9fa] dark:bg-[#0B0F14] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={headerVariants} className="flex flex-col mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-[#1F1D2B] mb-4 flex items-center">
-            <motion.div whileHover={{ rotate: 15, scale: 1.1 }} className="p-3 bg-[#A855F7] text-white rounded-2xl mr-5 shadow-lg shadow-purple-500/20">
+            <motion.div whileHover={{ rotate: 15, scale: 1.1 }} className="p-3 bg-gradient-to-br from-[#A855F7] to-[#2DD4BF] text-white rounded-2xl mr-5 shadow-lg shadow-purple-500/20">
               <FontAwesomeIcon icon={faComments} />
             </motion.div>
-            {t("references.title")}
+            <span className="bg-gradient-to-r from-[#1F1D2B] via-[#1F1D2B] to-[#6b7280] dark:from-white dark:via-white dark:to-gray-400 bg-clip-text text-transparent">
+              {t("references.title")}
+            </span>
           </h2>
-          <p className="text-xl text-gray-500 max-w-2xl font-medium italic">
+          <p className="text-xl text-gray-500 dark:text-gray-300 max-w-2xl font-medium italic">
             {t("references.tagline")}
           </p>
         </motion.div>
@@ -72,17 +74,17 @@ const ReferencesSection = () => {
         <motion.div className="grid gap-8 lg:grid-cols-2" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
           {/* Mapeamos los datos que vienen del JSON */}
           {Array.isArray(referencesData) && referencesData.map((ref, index) => (
-            <motion.div key={index} variants={cardVariants} whileHover={{ y: -5 }} className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 flex flex-col relative">
+            <motion.div key={index} variants={cardVariants} whileHover={{ y: -5 }} className="bg-white/60 dark:bg-white/10 backdrop-blur-xl p-8 rounded-[2rem] shadow-sm ring-1 ring-white/20 dark:ring-white/10 flex flex-col relative hover:ring-[#A855F7]/30 transition">
               <FontAwesomeIcon icon={faQuoteLeft} className="absolute top-8 right-8 text-[#2DD4BF] opacity-10 text-4xl" />
 
-              <p className="text-lg text-gray-600 italic mb-8 leading-relaxed">
+              <p className="text-lg text-gray-600 dark:text-gray-300 italic mb-8 leading-relaxed">
                 "{ref.quote}"
               </p>
 
               <div className="flex items-center justify-between mt-auto border-t border-gray-50 pt-6">
                 <div className="flex items-center">
                   <div>
-                    <h4 className="font-bold text-[#1F1D2B] text-lg">{ref.name}</h4>
+                    <h4 className="font-bold text-[#1F1D2B] dark:text-gray-100 text-lg">{ref.name}</h4>
                     <p className="text-[#A855F7] font-semibold text-sm">{ref.position}</p>
                   </div>
                 </div>

@@ -32,6 +32,9 @@ const AboutMe = () => {
             <img 
               src="/perfil.png"
               alt="Nicolás" 
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="relative h-72 w-72 md:h-80 md:w-80 object-cover rounded-[2rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 border-4 border-white"
             />
           </motion.div>
@@ -46,13 +49,13 @@ const AboutMe = () => {
           className="text-left space-y-6"
         >
           <div className="space-y-2">
-            <h2 className="text-5xl font-black text-[#1F1D2B] tracking-tight">
+            <h2 className="text-5xl font-black text-[#1F1D2B] dark:text-gray-100 tracking-tight">
               {t("about.title")}
             </h2>
             <div className="h-2 w-16 bg-[#2DD4BF] rounded-full"></div>
           </div>
 
-          <p className="text-gray-500 text-lg leading-relaxed font-medium">
+          <p className="text-gray-500 dark:text-gray-300 text-lg leading-relaxed font-medium">
             {t("about.description")}
           </p>
         </motion.div>

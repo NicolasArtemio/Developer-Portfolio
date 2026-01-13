@@ -35,8 +35,8 @@ const skillVariants: Variants = {
 
 const SkillCard = ({ skill }: SkillCardProps) => (
   <motion.div 
-    variants={skillVariants} // Hereda el estado del padre (SkillsSection)
-    className="group p-8 bg-white rounded-[2.5rem] border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-1"
+    variants={skillVariants}
+    className="group p-8 bg-white/60 dark:bg-white/10 backdrop-blur-xl rounded-[2.5rem] ring-1 ring-white/20 dark:ring-white/10 shadow-sm transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-1 hover:ring-[#A855F7]/30"
   >
     
     {/* Contenedor del Icono */}
@@ -47,11 +47,9 @@ const SkillCard = ({ skill }: SkillCardProps) => (
       />
     </div>
 
-    {/* Título */}
-    <h3 className="text-2xl font-black text-[#1F1D2B] mb-3">{skill.title}</h3>
+    <h3 className="text-2xl font-black text-[#1F1D2B] dark:text-gray-100 mb-3">{skill.title}</h3>
     
-    {/* Descripción */}
-    <p className="text-gray-500 mb-6 leading-relaxed font-medium">
+    <p className="text-gray-500 dark:text-gray-300 mb-6 leading-relaxed font-medium">
       {skill.description}
     </p>
 
@@ -60,7 +58,7 @@ const SkillCard = ({ skill }: SkillCardProps) => (
       {skill.technologies.map((tech, index) => (
         <span
           key={index}
-          className="text-[11px] font-bold bg-[#F8FAFC] text-gray-500 border border-gray-100 px-4 py-1.5 rounded-xl transition-colors duration-300 group-hover:border-[#2DD4BF]/40 group-hover:text-[#2DD4BF]"
+          className="text-[11px] font-bold bg-white/60 dark:bg-white/5 text-gray-600 dark:text-gray-300 ring-1 ring-gray-200 dark:ring-white/10 px-4 py-1.5 rounded-xl transition-colors duration-300 group-hover:ring-[#2DD4BF]/40 group-hover:text-[#2DD4BF]"
         >
           {tech}
         </span>

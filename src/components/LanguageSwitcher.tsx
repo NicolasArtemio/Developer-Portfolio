@@ -13,18 +13,22 @@ const LanguageSwitcher = () => {
       ? "bg-[#a75ec1] text-white font-bold"
       : "bg-gray-700 text-white hover:bg-gray-600";
   return (
-    <div>
+    <div role="group" aria-label="Selector de idioma">
       <span className="mr-2 text-sm text-gray-400">
         {t("translation.lang")}:
       </span>
       <button
+        type="button"
         onClick={() => changeLanguage("es")}
+        aria-pressed={i18n.language === "es"}
         className={`px-3 py-1 rounded ${isActive("es")}`}
       >
         ES
       </button>
       <button
+        type="button"
         onClick={() => changeLanguage("en")}
+        aria-pressed={i18n.language === "en"}
         className={`px-3 py-1 rounded ${isActive("en")}`}
       >
         EN

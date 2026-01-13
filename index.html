@@ -1,16 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portafolio de Nicolás Dume — Fullstack Developer. Proyectos con React, TypeScript y NestJS, foco en arquitectura limpia y UX." />
+    <meta name="theme-color" content="#F3F4F6" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Nicolás | Fullstack Developer" />
+    <meta property="og:description" content="Proyectos con React, TypeScript y NestJS. Arquitectura limpia y experiencias de usuario de alto rendimiento." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/perfil.png" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nicolás | Fullstack Developer" />
+    <meta name="twitter:description" content="Portafolio con foco en arquitectura limpia, rendimiento y UX." />
+    <meta name="twitter:image" content="/perfil.png" />
+    <link rel="preload" as="image" href="/perfil.png" imagesrcset="/perfil.png" />
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme','dark');
+        }
+      } catch(e) {}
+    </script>
     <link
       rel="icon"
       type="image/svg+xml"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a1a2e'/><text x='15' y='75' font-size='80' fill='%2342b883' font-family='monospace'>></text></svg>"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicolás | Fullstack Developer</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nicolás Dume",
+        "jobTitle": "Fullstack Developer",
+        "description": "Full Stack con foco en TypeScript, React y NestJS. Arquitectura limpia y UX.",
+        "sameAs": [
+          "https://github.com/NicolasArtemio",
+          "https://www.linkedin.com/in/nicolas-artemio-dume-626223371/"
+        ]
+      }
+    </script>
   </head>
   <body>
+    <a href="#home" class="fixed z-50 left-4 top-4 sr-only focus:not-sr-only bg-white text-[#1F2937] px-3 py-2 rounded shadow focus:outline-none focus:ring-2 focus:ring-[#2DD4BF]">Saltar al contenido</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -63,8 +63,8 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="bg-white py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="section-decor bg-white dark:bg-[#0B0F14] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Encabezado animado */}
         <motion.div 
@@ -77,13 +77,15 @@ const ProjectsSection = () => {
           <h2 className="text-4xl md:text-5xl font-black text-[#1F1D2B] mb-4 flex items-center">
             <motion.div 
               whileHover={{ rotate: 15, scale: 1.1 }}
-              className="p-3 bg-[#A855F7] text-white rounded-2xl mr-5 shadow-lg shadow-purple-500/20"
+              className="p-3 bg-gradient-to-br from-[#A855F7] to-[#2DD4BF] text-white rounded-2xl mr-5 shadow-lg shadow-purple-500/20"
             >
               <FontAwesomeIcon icon={faRocket} />
             </motion.div>
-            {t("projects.title")}
+            <span className="bg-gradient-to-r from-[#1F1D2B] via-[#1F1D2B] to-[#6b7280] dark:from-white dark:via-white dark:to-gray-400 bg-clip-text text-transparent">
+              {t("projects.title")}
+            </span>
           </h2>
-          <p className="text-xl text-gray-500 max-w-2xl font-medium italic">
+          <p className="text-xl text-gray-500 dark:text-gray-300 max-w-2xl font-medium italic">
             {t("projects.tagline")}
           </p>
         </motion.div>
@@ -94,9 +96,9 @@ const ProjectsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="flex space-x-6 mb-12 border-b border-gray-100"
+          className="flex space-x-6 mb-12 border-b border-gray-100 dark:border-white/10"
         >
-          <button className="text-lg font-bold border-b-4 border-[#2DD4BF] text-[#1F1D2B] pb-3 transition duration-300">
+          <button className="text-lg font-bold border-b-4 border-[#2DD4BF] text-[#1F1D2B] dark:text-gray-100 pb-3 transition duration-300">
             {t("projects.tab")}
           </button>
         </motion.div>

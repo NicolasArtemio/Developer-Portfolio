@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+/* Decoración de fondo suave para secciones */
+.section-decor {
+  position: relative;
+}
+.section-decor::before {
+  content: "";
+  position: absolute;
+  inset: auto;
+  top: -120px;
+  right: -120px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(closest-side, rgba(168, 85, 247, 0.18), rgba(28, 31, 30, 0.12), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
 @media (min-width: 1920px) {
   #contacto {
     padding-left: 19.5rem;

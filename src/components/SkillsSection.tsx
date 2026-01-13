@@ -65,8 +65,8 @@ const SkillsSection = () => {
   }));
 
   return (
-    <section id="skills" className="bg-[#F3F4F6] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="skills" className="section-decor bg-[#F3F4F6] dark:bg-[#0B0F14] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Cabecera Animada */}
         <motion.div 
@@ -79,13 +79,15 @@ const SkillsSection = () => {
           <h2 className="text-4xl md:text-5xl font-black text-[#1F1D2B] mb-4 flex items-center">
             <motion.div 
               whileHover={{ rotate: -10, scale: 1.1 }}
-              className="p-3 bg-[#2DD4BF] text-white rounded-2xl mr-5 shadow-lg shadow-cyan-500/20"
+              className="p-3 bg-gradient-to-br from-[#2DD4BF] to-[#A855F7] text-white rounded-2xl mr-5 shadow-lg shadow-cyan-500/20"
             >
               <FontAwesomeIcon icon={faToolbox} />
             </motion.div>
-            {t("skills.main_title")}
+            <span className="bg-gradient-to-r from-[#1F1D2B] via-[#1F1D2B] to-[#6b7280] dark:from-white dark:via-white dark:to-gray-400 bg-clip-text text-transparent">
+              {t("skills.main_title")}
+            </span>
           </h2>
-          <p className="text-xl text-gray-500 max-w-2xl font-medium italic">
+          <p className="text-xl text-gray-500 dark:text-gray-300 max-w-2xl font-medium italic">
             {t("skills.main_description")}
           </p>
         </motion.div>
