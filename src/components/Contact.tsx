@@ -22,7 +22,8 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
 
   return (
     <section
-      className="bg-[var(--surface-1)] py-24 px-6 md:px-20 2xl:px-40 overflow-hidden"
+      /* CAMBIO: bg-transparent para que use el azul del body en dark mode */
+      className="bg-transparent py-24 px-6 md:px-20 2xl:px-40 overflow-hidden"
       id="contact"
     >
       <div className="max-w-7xl mx-auto">
@@ -47,7 +48,8 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col gap-5 max-w-lg w-full p-8 md:p-10 bg-[var(--surface-1)] rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-[var(--border-color)] backdrop-blur-xl"
+            /* CAMBIO: bg-[var(--surface-1)] y sombras dinámicas */
+            className="flex flex-col gap-5 max-w-lg w-full p-8 md:p-10 bg-[var(--surface-1)] rounded-[2.5rem] shadow-2xl dark:shadow-none border border-[var(--border-color)] backdrop-blur-xl"
             onSubmit={handleSubmit}
           >
             <label htmlFor="name" className="sr-only">{t("contact.name_placeholder")}</label>
@@ -56,7 +58,8 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               name="name"
               id="name"
               placeholder={t("contact.name_placeholder")}
-              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)]"
+              /* CAMBIO: bg-[var(--surface-0)] para contraste interno */
+              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] focus:ring-2 focus:ring-[#2DD4BF]/50 outline-none transition-all"
               value={form.name}
               onChange={handleChange}
               required
@@ -70,7 +73,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               name="email"
               id="email"
               placeholder={t("contact.email_placeholder")}
-              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)]"
+              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] focus:ring-2 focus:ring-[#2DD4BF]/50 outline-none transition-all"
               value={form.email}
               onChange={handleChange}
               required
@@ -84,7 +87,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               id="message"
               placeholder={t("contact.message_placeholder")}
               rows={5}
-              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] resize-none"
+              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] resize-none focus:ring-2 focus:ring-[#2DD4BF]/50 outline-none transition-all"
               value={form.message}
               onChange={handleChange}
               required
@@ -153,7 +156,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
                   whileHover={{ x: 10 }}
                   className="flex items-center gap-4 text-[var(--text-primary)] hover:text-[#A855F7] transition-colors group"
                 >
-                  <div className="p-3 bg-[var(--surface-1)] rounded-xl shadow-sm group-hover:shadow-md transition-all">
+                  <div className="p-3 bg-[var(--surface-1)] rounded-xl border border-[var(--border-color)] shadow-sm group-hover:shadow-md transition-all">
                     <item.icon className="text-[#2DD4BF]" size={24} />
                   </div>
                   <span className="font-semibold text-lg">{item.label}</span>
@@ -167,4 +170,4 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
   );
 }
 
-export default Contact;
+export default Contact

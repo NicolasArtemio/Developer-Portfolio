@@ -38,10 +38,10 @@ const Navbar = () => {
 
   const navVariants: Variants = {
     hidden: { y: -20, opacity: 0 },
-    visible: { 
-      y: 0, 
-      opacity: 1, 
-      transition: { duration: 0.5, ease: "easeOut" } 
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" }
     }
   };
 
@@ -52,18 +52,17 @@ const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={navVariants}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "bg-[#241431]/80 backdrop-blur-xl py-3 border-b border-white/10 shadow-lg" 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+          ? "bg-[#241431]/80 backdrop-blur-xl py-3 border-b border-white/10 shadow-lg"
           : "bg-transparent py-6"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <motion.h1 
+        <motion.h1
           whileHover={{ scale: 1.05 }}
           className="text-[#2DD4BF] text-2xl font-black tracking-tighter cursor-pointer"
         >
-          Nico<span className={isScrolled ? "text-white" : "text-[#241431] dark:text-white"}>Dev</span>
+          Nico<span className={isScrolled ? "!text-white" : "text-[#241431] dark:text-white"}>Dev</span>
         </motion.h1>
 
         <div className="hidden md:flex space-x-8 items-center text-sm font-bold uppercase tracking-widest">
@@ -76,10 +75,8 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className={`relative transition-colors duration-300 group ${
-                isScrolled ? "text-white/80 hover:text-[#2DD4BF]" : "text-[#241431]/70 hover:text-[#2DD4BF] dark:text-white/80"
-              } ${activeSection === link.href.slice(1) ? "text-[#2DD4BF]" : ""}`}
-              aria-current={activeSection === link.href.slice(1) ? "page" : undefined}
+              className={`relative transition-colors duration-300 group ${isScrolled ? "text-white/80 hover:text-[#2DD4BF]" : "text-[#241431]/70 hover:text-[#2DD4BF] dark:text-white/80"
+                } ${activeSection === link.href.slice(1) ? "!text-[#2DD4BF]" : ""}`}
             >
               {link.name}
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#2DD4BF] transition-all duration-300 group-hover:w-full`}></span>
@@ -89,37 +86,41 @@ const Navbar = () => {
             </a>
           ))}
 
-          {/* BOTÓN SOBRE MÍ: Ahora con text-white forzado para que siempre se vea en light mode */}
+          {/* BOTÓN SOBRE MÍ: Usamos !text-white para ganar la prioridad del CSS global */}
           <motion.a
             href="#about"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`px-6 py-2.5 rounded-full text-xs font-black text-white transition-all duration-300 shadow-lg ${
-              isScrolled 
-                ? "bg-[#A855F7] shadow-purple-500/20" 
+            className={`px-6 py-2.5 rounded-full text-xs font-black !text-white transition-all duration-300 shadow-lg ${isScrolled
+                ? "bg-[#A855F7] shadow-purple-500/20"
                 : "bg-[#241431] shadow-black/10"
-            }`}
+              }`}
           >
             {t("navbar.about")}
           </motion.a>
         </div>
 
         <div className="flex items-center gap-4">
-          <div className={`p-1 rounded-xl transition-all duration-300 border ${
-            isScrolled ? "bg-[var(--bg-primary)] border-white/10" : "bg-[var(--bg-primary)] border-black/10"
-          }`}>
+          <div className={`p-1 rounded-xl transition-all duration-300 border ${isScrolled ? "bg-[var(--bg-primary)] border-white/10" : "bg-[var(--bg-primary)] border-black/10"
+            }`}>
             <LanguageSwitcher />
           </div>
           <button
             type="button"
             aria-label={theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
             onClick={toggleTheme}
-            className={`p-2 rounded-xl transition-all duration-300 border ${
-              isScrolled ? "bg-[var(--bg-primary)] border-white/10 text-[var(--text-primary)]" : "bg-[var(--bg-primary)] border-black/10 text-[#241431]"
-            } hover:scale-105`}
+            /* Agregué !text-[#241431] para que la luna sea visible y oscura en modo claro */
+            className={`p-2 rounded-xl transition-all duration-300 border ${isScrolled
+                ? "bg-[var(--bg-primary)] border-white/10 !text-[var(--text-primary)]"
+                : "bg-[var(--bg-primary)] border-black/10 !text-[#241431] dark:!text-white"
+              } hover:scale-105 hover:bg-[#2DD4BF]/10`}
             title={theme === "dark" ? "Modo claro" : "Modo oscuro"}
           >
-            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === "dark" ? (
+              <Sun size={18} className="text-yellow-400" />
+            ) : (
+              <Moon size={18} className="!text-[#241431]" />
+            )}
           </button>
         </div>
       </div>
