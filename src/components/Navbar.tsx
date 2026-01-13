@@ -13,7 +13,6 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Ajustamos a 50px para que el cambio no sea tan abrupto
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
@@ -37,8 +36,6 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, []);
 
-  
-
   const navVariants: Variants = {
     hidden: { y: -20, opacity: 0 },
     visible: { 
@@ -55,7 +52,6 @@ const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={navVariants}
-      // La clave está en la transición de colores aquí
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
           ? "bg-[#241431]/80 backdrop-blur-xl py-3 border-b border-white/10 shadow-lg" 
@@ -65,8 +61,6 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <motion.h1 
           whileHover={{ scale: 1.05 }}
-          // El logo cambia de color según el scroll si lo deseas, 
-          // o se mantiene turquesa para identidad de marca
           className="text-[#2DD4BF] text-2xl font-black tracking-tighter cursor-pointer"
         >
           Nico<span className={isScrolled ? "text-white" : "text-[#241431] dark:text-white"}>Dev</span>
@@ -82,8 +76,6 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              // Si no hay scroll, el texto es oscuro para que se vea sobre el fondo claro
-              // Si hay scroll, el texto es blanco sobre el nav oscuro
               className={`relative transition-colors duration-300 group ${
                 isScrolled ? "text-white/80 hover:text-[#2DD4BF]" : "text-[#241431]/70 hover:text-[#2DD4BF] dark:text-white/80"
               } ${activeSection === link.href.slice(1) ? "text-[#2DD4BF]" : ""}`}
@@ -97,15 +89,15 @@ const Navbar = () => {
             </a>
           ))}
 
+          {/* BOTÓN SOBRE MÍ: Ahora con text-white forzado para que siempre se vea en light mode */}
           <motion.a
             href="#about"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            // El botón puede cambiar su intensidad según el scroll
-            className={`px-6 py-2.5 rounded-full text-xs font-black transition-all duration-300 shadow-lg ${
+            className={`px-6 py-2.5 rounded-full text-xs font-black text-white transition-all duration-300 shadow-lg ${
               isScrolled 
-                ? "bg-[#A855F7] text-white shadow-purple-500/20" 
-                : "bg-[#241431] text-white shadow-black/10"
+                ? "bg-[#A855F7] shadow-purple-500/20" 
+                : "bg-[#241431] shadow-black/10"
             }`}
           >
             {t("navbar.about")}
@@ -114,7 +106,7 @@ const Navbar = () => {
 
         <div className="flex items-center gap-4">
           <div className={`p-1 rounded-xl transition-all duration-300 border ${
-            isScrolled ? "bg-white/5 border-white/10" : "bg-black/5 border-black/10"
+            isScrolled ? "bg-[var(--bg-primary)] border-white/10" : "bg-[var(--bg-primary)] border-black/10"
           }`}>
             <LanguageSwitcher />
           </div>
@@ -123,7 +115,7 @@ const Navbar = () => {
             aria-label={theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
             onClick={toggleTheme}
             className={`p-2 rounded-xl transition-all duration-300 border ${
-              isScrolled ? "bg-white/5 border-white/10 text-white" : "bg-black/5 border-black/10 text-[#241431]"
+              isScrolled ? "bg-[var(--bg-primary)] border-white/10 text-[var(--text-primary)]" : "bg-[var(--bg-primary)] border-black/10 text-[#241431]"
             } hover:scale-105`}
             title={theme === "dark" ? "Modo claro" : "Modo oscuro"}
           >

@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
-/* Decoración de fondo suave para secciones */
+/* --- 1. TUS DECORACIONES DE FONDO (INTACTAS) --- */
 .section-decor {
   position: relative;
+  /* Quitamos el bg-color y la sombra para que no parezca un borde */
+  background-color: transparent !important; 
+  padding: 4rem 1rem;
+  border-radius: 1rem;
+  box-shadow: none !important; /* Adiós a la sombra que parece borde */
 }
 .section-decor::before {
   content: "";
@@ -18,6 +23,18 @@
   z-index: 0;
 }
 
+.section-decor.dark {
+  background-color: var(--surface-0-dark);
+  box-shadow: none;
+  border: 1px solid var(--border-color);
+}
+
+body.dark .section-decor {
+  background-color: var(--surface-0-dark);
+  border: 1px solid var(--border-color);
+}
+
+/* --- 2. TUS MEDIA QUERIES (INTACTOS) --- */
 @media (min-width: 1920px) {
   #contacto {
     padding-left: 19.5rem;
@@ -30,4 +47,90 @@
     padding-left: 40rem;
     padding-right: 40rem;
   }
+}
+
+/* --- 3. VARIABLES DE COLOR (CORREGIDO EL AZUL OSCURO) --- */
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #000000;
+  --border-color: #e5e7eb;
+
+  --surface-0-light: #F9FAFB;
+  --surface-1-light: #FFFFFF;
+  --surface-2-light: #E5E7EB;
+  --text-light: #111827;
+
+  /* Tu Azul Oscuro */
+  --surface-0-dark: #0F172A; 
+  --surface-1-dark: #1E293B;
+  --surface-2-dark: #334155;
+  --text-dark: #F8FAFC;
+
+  --surface-0: var(--surface-0-light);
+  --surface-1: var(--surface-1-light);
+  --surface-2: var(--surface-2-light);
+}
+
+body.dark {
+  /* AQUÍ ESTABA EL ERROR: Cambiado de #121212 a tu Azul */
+  --bg-primary: var(--surface-0-dark) !important; 
+  --text-primary: var(--text-dark) !important;
+  --border-color: #334155 !important;
+
+  --surface-0: var(--surface-0-dark);
+  --surface-1: var(--surface-1-dark);
+  --surface-2: var(--surface-2-dark);
+}
+
+/* --- 4. TUS REGLAS GLOBALES Y CARDS (INTACTAS) --- */
+* {
+  border-color: var(--border-color) !important;
+  color: inherit;
+}
+
+h1, h2, h3, h4, p, span, label {
+  color: var(--text-primary) !important;
+}
+
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+  transition: background-color 0.3s, color 0.3s;
+  text-rendering: optimizeLegibility;
+}
+
+.card {
+  background-color: var(--surface-1);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.popup {
+  background-color: var(--surface-2);
+  color: var(--text-primary);
+}
+
+#root, main {
+  background-color: transparent !important;
+}
+
+.reference-card {
+  background-color: var(--surface-1);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reference-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .reference-card {
+  background-color: var(--surface-1-dark);
+  box-shadow: none;
+  border: 1px solid var(--border-color);
 }

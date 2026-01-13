@@ -65,7 +65,10 @@ const SkillsSection = () => {
   }));
 
   return (
-    <section id="skills" className="section-decor bg-[#F3F4F6] dark:bg-[#0B0F14] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+    <section
+      id="skills"
+      className="section-decor py-24 px-4 sm:px-6 lg:px-8 overflow-hidden relative bg-[var(--surface-0)] dark:bg-[var(--surface-1-dark)] text-[var(--text-primary)]"
+    >
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Cabecera Animada */}
@@ -76,18 +79,24 @@ const SkillsSection = () => {
           variants={titleVariants}
           className="flex flex-col mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-[#1F1D2B] mb-4 flex items-center">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 flex items-center">
             <motion.div 
               whileHover={{ rotate: -10, scale: 1.1 }}
               className="p-3 bg-gradient-to-br from-[#2DD4BF] to-[#A855F7] text-white rounded-2xl mr-5 shadow-lg shadow-cyan-500/20"
             >
               <FontAwesomeIcon icon={faToolbox} />
             </motion.div>
-            <span className="bg-gradient-to-r from-[#1F1D2B] via-[#1F1D2B] to-[#6b7280] dark:from-white dark:via-white dark:to-gray-400 bg-clip-text text-transparent">
+            <span
+              className="bg-gradient-to-r bg-clip-text text-transparent"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, var(--text-color), var(--text-color))",
+              }}
+            >
               {t("skills.main_title")}
             </span>
           </h2>
-          <p className="text-xl text-gray-500 dark:text-gray-300 max-w-2xl font-medium italic">
+          <p className="text-xl max-w-2xl font-medium italic">
             {t("skills.main_description")}
           </p>
         </motion.div>

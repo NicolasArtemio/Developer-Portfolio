@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
@@ -23,11 +22,11 @@ const ContactSuccess = ({ open, onClose }: Props) => {
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ type: "spring", stiffness: 200 }}
-        className="bg-white rounded-3xl p-10 max-w-sm w-full text-center shadow-xl"
+        className="bg-[var(--bg-primary)] rounded-3xl p-10 max-w-sm w-full text-center shadow-xl"
       >
         <CheckCircle size={64} className="text-green-500 mx-auto mb-4" />
 
-        <h3 id="contact-success-title" className="text-2xl font-bold text-[#1F1D2B] mb-2">
+        <h3 id="contact-success-title" className="text-2xl font-bold text-[var(--text-primary)] mb-2">
           ¡Mensaje enviado!
         </h3>
 

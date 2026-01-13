@@ -5,8 +5,12 @@ const AboutMe = () => {
   const { t } = useTranslation();
 
   return (
-    <div id="about" className="flex flex-col items-center w-full overflow-hidden py-10">
-      <div className="max-w-md w-full">
+    <div
+      id="about"
+      /* bg-transparent permite que se vea el azul oscuro configurado en el body */
+      className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden relative bg-transparent text-[var(--text-primary)]"
+    >
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* FOTO: Con efecto de flote infinito */}
         <motion.div 
@@ -18,7 +22,6 @@ const AboutMe = () => {
         >
           <motion.div 
             className="relative group"
-            /* Efecto de flote: sube y baja suavemente */
             animate={{ y: [0, -15, 0] }}
             transition={{
               duration: 5,
@@ -29,18 +32,19 @@ const AboutMe = () => {
             {/* El resplandor decorativo */}
             <div className="absolute -inset-1 bg-gradient-to-r from-[#A855F7] to-[#2DD4BF] rounded-[2.2rem] blur opacity-20 group-hover:opacity-40 transition duration-700"></div>
             
-            <img 
+            <img
               src="/perfil.png"
-              alt="Nicolás" 
+              alt="Nicolás"
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="relative h-72 w-72 md:h-80 md:w-80 object-cover rounded-[2rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 border-4 border-white"
+              /* SE QUITÓ LA CLASE 'border-4' y 'border-[var(--border-color)]' */
+              className="relative h-72 w-72 md:h-80 md:w-80 object-cover rounded-[2rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-500"
             />
           </motion.div>
         </motion.div>
 
-        {/* TEXTO: Entrada desde la izquierda al scrolear */}
+        {/* TEXTO: Entrada desde la izquierda */}
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -49,17 +53,16 @@ const AboutMe = () => {
           className="text-left space-y-6"
         >
           <div className="space-y-2">
-            <h2 className="text-5xl font-black text-[#1F1D2B] dark:text-gray-100 tracking-tight">
+            <h2 className="text-5xl font-black text-[var(--text-primary)] tracking-tight">
               {t("about.title")}
             </h2>
             <div className="h-2 w-16 bg-[#2DD4BF] rounded-full"></div>
           </div>
 
-          <p className="text-gray-500 dark:text-gray-300 text-lg leading-relaxed font-medium">
+          <p className="text-[var(--text-primary)] text-lg leading-relaxed font-medium">
             {t("about.description")}
           </p>
         </motion.div>
-
       </div>
     </div>
   );

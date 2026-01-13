@@ -24,11 +24,11 @@ const ContactError = ({ open, onClose }: Props) => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-white rounded-3xl p-10 max-w-sm w-full text-center shadow-2xl"
+            className="bg-[var(--bg-primary)] rounded-3xl p-10 max-w-sm w-full text-center shadow-2xl"
           >
             <XCircle size={64} className="text-red-500 mx-auto mb-4" />
 
-            <h3 id="contact-error-title" className="text-2xl font-bold text-[#1F1D2B] mb-2">
+            <h3 id="contact-error-title" className="text-2xl font-bold text-[var(--text-primary)] mb-2">
               Error al enviar
             </h3>
 

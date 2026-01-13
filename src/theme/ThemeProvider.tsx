@@ -15,44 +15,17 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(getInitial);
 
   useEffect(() => {
-    const root = document.documentElement;
+    const body = document.body;
     if (theme === "dark") {
-      root.classList.add("dark");
-      root.setAttribute("data-theme", "dark");
-      const meta = document.querySelector(
-        'meta[name="theme-color"]',
-      ) as HTMLMetaElement | null;
-      if (meta) meta.content = "#0B0F14";
+      body.classList.add("dark");
     } else {
-      root.classList.remove("dark");
-      root.setAttribute("data-theme", "light");
-      const meta = document.querySelector(
-        'meta[name="theme-color"]',
-      ) as HTMLMetaElement | null;
-      if (meta) meta.content = "#F3F4F6";
+      body.classList.remove("dark");
     }
     localStorage.setItem("theme", theme);
   }, [theme]);
 
   const setTheme = (t: Theme) => setThemeState(t);
-  const toggleTheme = () => {
-    const next: Theme = theme === "dark" ? "light" : "dark";
-    const root = document.documentElement;
-    const meta = document.querySelector(
-      'meta[name="theme-color"]',
-    ) as HTMLMetaElement | null;
-    if (next === "dark") {
-      root.classList.add("dark");
-      root.setAttribute("data-theme", "dark");
-      if (meta) meta.content = "#0B0F14";
-    } else {
-      root.classList.remove("dark");
-      root.setAttribute("data-theme", "light");
-      if (meta) meta.content = "#F3F4F6";
-    }
-    localStorage.setItem("theme", next);
-    setThemeState(next);
-  };
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   const value: ThemeContextValue = { theme, setTheme, toggleTheme };
 

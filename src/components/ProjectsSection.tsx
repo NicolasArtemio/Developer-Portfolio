@@ -63,7 +63,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="section-decor bg-white dark:bg-[#0B0F14] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+    <section id="projects" className="section-decor bg-[var(--bg-primary)] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Encabezado animado */}

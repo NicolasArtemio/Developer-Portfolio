@@ -5,11 +5,11 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white dark:bg-[#0B0F14] border-t border-gray-100 dark:border-white/10 py-10">
+    <footer className="bg-[var(--bg-primary)] border-t border-gray-100 dark:border-white/10 py-10">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
         
         {/* Lado izquierdo: Logo/Nombre */}
-        <div className="text-[#1F1D2B] dark:text-gray-100 font-black text-xl tracking-tighter">
+        <div className="text-[var(--text-primary)] font-black text-xl tracking-tighter">
           Nico<span className="text-[#2DD4BF]">Dev</span>
         </div>
 

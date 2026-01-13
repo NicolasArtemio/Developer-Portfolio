@@ -20,12 +20,9 @@ interface Props {
 function Contact({ form, handleSubmit, handleChange, loading }: Props) {
   const { t } = useTranslation();
 
-  const inputStyles =
-    "w-full p-4 bg-[#F8FAFC] dark:bg-[#0F1319] border border-gray-200 dark:border-white/10 rounded-2xl text-[#1F1D2B] dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#A855F7] focus:ring-2 focus:ring-[#A855F7]/20 transition-all duration-300 font-medium";
-
   return (
     <section
-      className="bg-[#F3F4F6] dark:bg-[#0B0F14] py-24 px-6 md:px-20 2xl:px-40 overflow-hidden"
+      className="bg-[var(--surface-1)] py-24 px-6 md:px-20 2xl:px-40 overflow-hidden"
       id="contact"
     >
       <div className="max-w-7xl mx-auto">
@@ -37,7 +34,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-[#1F1D2B] dark:text-gray-100 mb-4">
+          <h2 className="text-4xl md:text-5xl font-black text-[var(--text-primary)] mb-4">
             {t("contact.title")}
           </h2>
           <div className="h-2 w-20 bg-[#2DD4BF] rounded-full"></div>
@@ -50,7 +47,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col gap-5 max-w-lg w-full p-8 md:p-10 bg-white dark:bg-white/10 rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-gray-50 dark:border-white/10 backdrop-blur-xl"
+            className="flex flex-col gap-5 max-w-lg w-full p-8 md:p-10 bg-[var(--surface-1)] rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-[var(--border-color)] backdrop-blur-xl"
             onSubmit={handleSubmit}
           >
             <label htmlFor="name" className="sr-only">{t("contact.name_placeholder")}</label>
@@ -59,7 +56,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               name="name"
               id="name"
               placeholder={t("contact.name_placeholder")}
-              className={inputStyles}
+              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)]"
               value={form.name}
               onChange={handleChange}
               required
@@ -73,7 +70,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               name="email"
               id="email"
               placeholder={t("contact.email_placeholder")}
-              className={inputStyles}
+              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)]"
               value={form.email}
               onChange={handleChange}
               required
@@ -87,7 +84,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               id="message"
               placeholder={t("contact.message_placeholder")}
               rows={5}
-              className={`${inputStyles} resize-none`}
+              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] resize-none"
               value={form.message}
               onChange={handleChange}
               required
@@ -127,10 +124,10 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
             className="flex flex-col justify-center space-y-8 lg:pl-10"
           >
             <div>
-              <p className="text-2xl font-bold text-[#1F1D2B] dark:text-gray-100 mb-4">
+              <p className="text-2xl font-bold text-[var(--text-primary)] mb-4">
                 {t("contact.other_options_title")}
               </p>
-              <p className="text-gray-500 dark:text-gray-300 text-lg leading-relaxed max-w-xs font-medium">
+              <p className="text-[var(--text-primary)] opacity-80 text-lg leading-relaxed max-w-xs font-medium">
                 {t("contact.other_options_text")}
               </p>
             </div>
@@ -154,9 +151,9 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
                   target={item.icon === Linkedin ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   whileHover={{ x: 10 }}
-                  className="flex items-center gap-4 text-gray-600 dark:text-gray-300 hover:text-[#A855F7] transition-colors group"
+                  className="flex items-center gap-4 text-[var(--text-primary)] hover:text-[#A855F7] transition-colors group"
                 >
-                  <div className="p-3 bg-white dark:bg-white/10 rounded-xl shadow-sm group-hover:shadow-md transition-all">
+                  <div className="p-3 bg-[var(--surface-1)] rounded-xl shadow-sm group-hover:shadow-md transition-all">
                     <item.icon className="text-[#2DD4BF]" size={24} />
                   </div>
                   <span className="font-semibold text-lg">{item.label}</span>
