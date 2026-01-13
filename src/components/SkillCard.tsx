@@ -36,37 +36,25 @@ const skillVariants: Variants = {
 const SkillCard = ({ skill }: SkillCardProps) => (
   <motion.div
     variants={skillVariants}
-    className="group p-8 backdrop-blur-xl rounded-[2.5rem] ring-1 shadow-sm transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-1"
-    style={{
-      backgroundColor: "var(--card-bg)",
-      borderColor: "var(--border-color)",
-      color: "var(--text-color)",
-    }}
+    className="group p-8 bg-[var(--surface-1)] backdrop-blur-xl rounded-[2.5rem] ring-1 ring-[var(--border-color)] shadow-sm transition-all duration-300 hover:shadow-2xl hover:shadow-[var(--accent-secondary)]/10 hover:-translate-y-1 text-[var(--text-primary)]"
   >
     {/* Contenedor del Icono */}
     <div
-      className={`w-14 h-14 ${
-        skill.color || "bg-gray-100"
-      } text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110`}
+      className={`w-14 h-14 ${skill.color} text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110`}
     >
       <FontAwesomeIcon icon={skill.icon} className="text-2xl" />
     </div>
 
-    <h3 className="text-2xl font-black mb-3">{skill.title}</h3>
+    <h3 className="text-2xl font-black mb-3 text-[var(--text-primary)]">{skill.title}</h3>
 
-    <p className="mb-6 leading-relaxed font-medium">{skill.description}</p>
+    <p className="mb-6 leading-relaxed font-medium text-[var(--text-primary)] opacity-80">{skill.description}</p>
 
     {/* Tecnologías */}
     <div className="flex flex-wrap gap-2">
       {skill.technologies.map((tech, index) => (
         <span
           key={index}
-          className="text-[11px] font-bold px-4 py-1.5 rounded-xl transition-colors duration-300 group-hover:ring-[#2DD4BF]/40 group-hover:text-[#2DD4BF]"
-          style={{
-            backgroundColor: "var(--card-bg)",
-            borderColor: "var(--border-color)",
-            color: "var(--text-color)",
-          }}
+          className="text-[11px] font-bold px-4 py-1.5 bg-[var(--surface-2)] text-[var(--text-primary)] rounded-xl ring-1 ring-[var(--accent-primary)]/30 transition-colors duration-300 group-hover:bg-[var(--accent-primary)]/10 group-hover:text-[var(--accent-primary)]"
         >
           {tech}
         </span>

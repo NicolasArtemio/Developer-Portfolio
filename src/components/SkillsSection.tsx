@@ -15,17 +15,17 @@ const SkillsData = [
   // ... tu configuración de SkillsData se mantiene igual
   {
     icon: faCode,
-    color: "bg-[#2DD4BF]",
+    color: "bg-[var(--accent-primary)]",
     technologies: ["React", "TypeScript", "Tailwind CSS", "JavaScript", "HTML5", "CSS3"],
   },
   {
     icon: faDatabase,
-    color: "bg-[#A855F7]",
+    color: "bg-[var(--accent-secondary)]",
     technologies: ["Node.js", "NestJs", "Express", "MongoDB", "MYSQL", "REST APIs"],
   },
   {
     icon: faPuzzlePiece,
-    color: "bg-gray-400",
+    color: "bg-[var(--text-primary)]/60",
     technologies: ["Git", "GitHub", "Jira", "Figma", "Docker", "Scrum", "Postman"],
   },
 ];
@@ -79,10 +79,13 @@ const SkillsSection = () => {
           variants={titleVariants}
           className="flex flex-col mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4 flex items-center">
-            <motion.div 
+          <h2
+            id="skills-heading"
+            className="text-4xl md:text-5xl font-black mb-4 flex items-center"
+          >
+            <motion.div
               whileHover={{ rotate: -10, scale: 1.1 }}
-              className="p-3 bg-gradient-to-br from-[#2DD4BF] to-[#A855F7] text-white rounded-2xl mr-5 shadow-lg shadow-cyan-500/20"
+              className="p-3 bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)] text-white rounded-2xl mr-5 shadow-lg shadow-[var(--accent-primary)]/20"
             >
               <FontAwesomeIcon icon={faToolbox} />
             </motion.div>

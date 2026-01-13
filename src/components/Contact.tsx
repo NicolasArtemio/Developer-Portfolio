@@ -35,10 +35,13 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-[var(--text-primary)] mb-4">
+          <h2
+            id="contact-heading"
+            className="text-4xl md:text-5xl font-black text-[var(--text-primary)] mb-4"
+          >
             {t("contact.title")}
           </h2>
-          <div className="h-2 w-20 bg-[#2DD4BF] rounded-full"></div>
+          <div className="h-2 w-20 bg-[var(--accent-primary)] rounded-full"></div>
         </motion.div>
 
         <div className="flex flex-col gap-12 lg:flex-row lg:items-stretch">
@@ -58,8 +61,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               name="name"
               id="name"
               placeholder={t("contact.name_placeholder")}
-              /* CAMBIO: bg-[var(--surface-0)] para contraste interno */
-              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] focus:ring-2 focus:ring-[#2DD4BF]/50 outline-none transition-all"
+              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] focus:ring-2 focus:ring-[var(--accent-primary)]/50 outline-none transition-all focus-ring"
               value={form.name}
               onChange={handleChange}
               required
@@ -73,7 +75,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               name="email"
               id="email"
               placeholder={t("contact.email_placeholder")}
-              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] focus:ring-2 focus:ring-[#2DD4BF]/50 outline-none transition-all"
+              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] focus:ring-2 focus:ring-[var(--accent-primary)]/50 outline-none transition-all focus-ring"
               value={form.email}
               onChange={handleChange}
               required
@@ -87,7 +89,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               id="message"
               placeholder={t("contact.message_placeholder")}
               rows={5}
-              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] resize-none focus:ring-2 focus:ring-[#2DD4BF]/50 outline-none transition-all"
+              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] resize-none focus:ring-2 focus:ring-[var(--accent-primary)]/50 outline-none transition-all focus-ring"
               value={form.message}
               onChange={handleChange}
               required
@@ -100,11 +102,11 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               whileTap={{ scale: loading ? 1 : 0.98 }}
               type="submit"
               disabled={loading}
-              className={`group mt-4 font-bold py-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2
+              className={`group mt-4 font-bold py-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 focus-ring
                 ${
                   loading
                     ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-[#A855F7] hover:bg-[#9333EA] text-white shadow-lg shadow-purple-500/30"
+                    : "bg-[var(--accent-secondary)] hover:bg-[var(--accent-secondary)]/90 text-white shadow-lg shadow-[var(--accent-secondary)]/30"
                 }
               `}
             >
@@ -154,10 +156,10 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
                   target={item.icon === Linkedin ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   whileHover={{ x: 10 }}
-                  className="flex items-center gap-4 text-[var(--text-primary)] hover:text-[#A855F7] transition-colors group"
+                  className="flex items-center gap-4 text-[var(--text-primary)] hover:text-[var(--accent-secondary)] transition-colors group focus-ring rounded-md p-2"
                 >
                   <div className="p-3 bg-[var(--surface-1)] rounded-xl border border-[var(--border-color)] shadow-sm group-hover:shadow-md transition-all">
-                    <item.icon className="text-[#2DD4BF]" size={24} />
+                    <item.icon className="text-[var(--accent-primary)]" size={24} />
                   </div>
                   <span className="font-semibold text-lg">{item.label}</span>
                 </motion.a>

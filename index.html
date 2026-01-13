@@ -3,50 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portafolio de Nicolás Dume — Fullstack Developer. Proyectos con React, TypeScript y NestJS, foco en arquitectura limpia y UX." />
-    <meta name="theme-color" content="#F3F4F6" />
-    <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="Nicolás | Fullstack Developer" />
-    <meta property="og:description" content="Proyectos con React, TypeScript y NestJS. Arquitectura limpia y experiencias de usuario de alto rendimiento." />
+
+    <!-- Primary Meta Tags -->
+    <title>Nicolás Dume | Fullstack Developer</title>
+    <meta name="title" content="Nicolás Dume | Fullstack Developer" />
+    <meta name="description" content="Portafolio profesional de Nicolás Dume — Desarrollador Fullstack especializado en React, TypeScript y NestJS. Enfoque en arquitectura limpia, rendimiento y experiencias de usuario excepcionales." />
+    <meta name="keywords" content="desarrollador fullstack, react, typescript, nestjs, javascript, nodejs, portafolio, programador, developer" />
+    <meta name="author" content="Nicolás Dume" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Theme and Mobile -->
+    <meta name="theme-color" content="#2dd4bf" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nicolasdume.dev/" />
+    <meta property="og:title" content="Nicolás Dume | Fullstack Developer" />
+    <meta property="og:description" content="Portafolio profesional especializado en React, TypeScript y NestJS. Arquitectura limpia y UX de alto rendimiento." />
     <meta property="og:image" content="/perfil.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Portafolio Nicolás Dume" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Nicolás | Fullstack Developer" />
-    <meta name="twitter:description" content="Portafolio con foco en arquitectura limpia, rendimiento y UX." />
+    <meta name="twitter:url" content="https://nicolasdume.dev/" />
+    <meta name="twitter:title" content="Nicolás Dume | Fullstack Developer" />
+    <meta name="twitter:description" content="Portafolio con foco en arquitectura limpia, rendimiento y UX excepcional." />
     <meta name="twitter:image" content="/perfil.png" />
-    <link rel="preload" as="image" href="/perfil.png" imagesrcset="/perfil.png" />
+    <meta name="twitter:creator" content="@nicolasartemio" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%232dd4bf'/><text x='15' y='75' font-size='80' fill='%23ffffff' font-family='monospace'>></text></svg>" />
+    <link rel="apple-touch-icon" href="/perfil.png" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="/perfil.png" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+    <!-- Theme script -->
     <script>
       try {
-        var t = localStorage.getItem('theme');
-        var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        if (dark) {
-          document.body.classList.add('dark');
+        var theme = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var isDark = theme === 'dark' || (!theme && prefersDark);
+        if (isDark) {
+          document.documentElement.classList.add('dark');
         }
+        // Store theme preference for React app
+        window.__theme = theme;
       } catch(e) {}
     </script>
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a1a2e'/><text x='15' y='75' font-size='80' fill='%2342b883' font-family='monospace'>></text></svg>"
-    />
-    <title>Nicolás | Fullstack Developer</title>
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Nicolás Dume",
-        "jobTitle": "Fullstack Developer",
-        "description": "Full Stack con foco en TypeScript, React y NestJS. Arquitectura limpia y UX.",
-        "sameAs": [
-          "https://github.com/NicolasArtemio",
-          "https://www.linkedin.com/in/nicolas-artemio-dume-626223371/"
-        ]
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://nicolasdume.dev/#person",
+      "name": "Nicolás Dume",
+      "alternateName": "Nicolas Artemio Dume",
+      "jobTitle": "Fullstack Developer",
+      "description": "Desarrollador Fullstack especializado en React, TypeScript y NestJS con enfoque en arquitectura limpia y experiencias de usuario excepcionales.",
+      "url": "https://nicolasdume.dev/",
+      "sameAs": [
+        "https://github.com/NicolasArtemio",
+        "https://www.linkedin.com/in/nicolas-artemio-dume-626223371/"
+      ],
+      "knowsAbout": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "NestJS",
+        "Node.js",
+        "MongoDB",
+        "MySQL",
+        "REST APIs",
+        "GraphQL",
+        "Docker",
+        "Git",
+        "Agile Development"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Fullstack Developer",
+        "occupationLocation": {
+          "@type": "Country",
+          "name": "Argentina"
+        }
       }
+    }
     </script>
   </head>
   <body>
-    <a href="#home" class="fixed z-50 left-4 top-4 sr-only focus:not-sr-only bg-white text-[#1F2937] px-3 py-2 rounded shadow focus:outline-none focus:ring-2 focus:ring-[#2DD4BF]">Saltar al contenido</a>
+    <a href="#home" class="fixed z-50 left-4 top-4 sr-only focus:not-sr-only bg-[var(--surface-1)] text-[var(--text-primary)] px-3 py-2 rounded shadow focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] border border-[var(--border-color)]">Saltar al contenido</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -6,3 +6,5 @@ export { default as SkillCard } from "./SkillCard";
 export { default as SkillsSection } from "./SkillsSection";
 export { default as LanguageSwitcher } from "./LanguageSwitcher";
 export { default as Navbar } from "./Navbar";
+export { default as LazyImage } from "./LazyImage";
+export { default as ErrorBoundary } from "./ErrorBoundary";

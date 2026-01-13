@@ -49,23 +49,30 @@ body.dark .section-decor {
   }
 }
 
-/* --- 3. VARIABLES DE COLOR (CORREGIDO EL AZUL OSCURO) --- */
+/* --- 3. VARIABLES DE COLOR (MEJORADO PARA CONSISTENCIA) --- */
 :root {
+  /* Light theme colors */
   --bg-primary: #ffffff;
-  --text-primary: #000000;
+  --text-primary: #0f172a;
   --border-color: #e5e7eb;
 
-  --surface-0-light: #F9FAFB;
-  --surface-1-light: #FFFFFF;
-  --surface-2-light: #E5E7EB;
-  --text-light: #111827;
+  --surface-0-light: #f8fafc;
+  --surface-1-light: #ffffff;
+  --surface-2-light: #f1f5f9;
+  --text-light: #0f172a;
 
-  /* Tu Azul Oscuro */
-  --surface-0-dark: #0F172A; 
-  --surface-1-dark: #1E293B;
+  /* Dark theme colors - improved for better contrast */
+  --surface-0-dark: #0f172a;
+  --surface-1-dark: #1e293b;
   --surface-2-dark: #334155;
-  --text-dark: #F8FAFC;
+  --text-dark: #f8fafc;
 
+  /* Brand colors - now theme-aware */
+  --accent-primary: #2dd4bf; /* Teal */
+  --accent-secondary: #a855f7; /* Purple */
+  --accent-success: #10b981; /* Green */
+
+  /* Dynamic surface variables */
   --surface-0: var(--surface-0-light);
   --surface-1: var(--surface-1-light);
   --surface-2: var(--surface-2-light);
@@ -133,4 +140,51 @@ body.dark .reference-card {
   background-color: var(--surface-1-dark);
   box-shadow: none;
   border: 1px solid var(--border-color);
+}
+
+/* --- 5. ANIMATIONS AND UTILITIES --- */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Focus styles for better accessibility */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  --tw-ring-color: var(--accent-primary);
+}
+
+/* Button hover effects */
+.btn-hover-lift {
+  @apply transition-transform duration-200 hover:-translate-y-0.5;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Improved scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
 }

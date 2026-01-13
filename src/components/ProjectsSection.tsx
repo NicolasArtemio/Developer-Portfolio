@@ -74,31 +74,34 @@ const ProjectsSection = () => {
           variants={headerVariants}
           className="flex flex-col mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-[#1F1D2B] mb-4 flex items-center">
-            <motion.div 
+          <h2
+            id="projects-heading"
+            className="text-4xl md:text-5xl font-black text-[var(--text-primary)] mb-4 flex items-center"
+          >
+            <motion.div
               whileHover={{ rotate: 15, scale: 1.1 }}
-              className="p-3 bg-gradient-to-br from-[#A855F7] to-[#2DD4BF] text-white rounded-2xl mr-5 shadow-lg shadow-purple-500/20"
+              className="p-3 bg-gradient-to-br from-[var(--accent-secondary)] to-[var(--accent-primary)] text-white rounded-2xl mr-5 shadow-lg shadow-[var(--accent-secondary)]/20"
             >
               <FontAwesomeIcon icon={faRocket} />
             </motion.div>
-            <span className="bg-gradient-to-r from-[#1F1D2B] via-[#1F1D2B] to-[#6b7280] dark:from-white dark:via-white dark:to-gray-400 bg-clip-text text-transparent">
+            <span className="gradient-text">
               {t("projects.title")}
             </span>
           </h2>
-          <p className="text-xl text-gray-500 dark:text-gray-300 max-w-2xl font-medium italic">
+          <p className="text-xl text-[var(--text-primary)]/60 dark:text-[var(--text-primary)]/70 max-w-2xl font-medium italic">
             {t("projects.tagline")}
           </p>
         </motion.div>
 
         {/* Tab / Filtro */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="flex space-x-6 mb-12 border-b border-gray-100 dark:border-white/10"
+          className="flex space-x-6 mb-12 border-b border-[var(--border-color)]"
         >
-          <button className="text-lg font-bold border-b-4 border-[#2DD4BF] text-[#1F1D2B] dark:text-gray-100 pb-3 transition duration-300">
+          <button className="text-lg font-bold border-b-4 border-[var(--accent-primary)] text-[var(--text-primary)] pb-3 transition duration-300">
             {t("projects.tab")}
           </button>
         </motion.div>

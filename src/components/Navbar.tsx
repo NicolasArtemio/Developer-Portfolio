@@ -48,21 +48,21 @@ const Navbar = () => {
   return (
     <motion.nav
       role="navigation"
-      aria-label="Navegación principal"
+      aria-label={t("navbar.main_navigation")}
       initial="hidden"
       animate="visible"
       variants={navVariants}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-          ? "bg-[#241431]/80 backdrop-blur-xl py-3 border-b border-white/10 shadow-lg"
+          ? "bg-[var(--surface-0)]/80 backdrop-blur-xl py-3 border-b border-[var(--border-color)] shadow-lg"
           : "bg-transparent py-6"
         }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <motion.h1
           whileHover={{ scale: 1.05 }}
-          className="text-[#2DD4BF] text-2xl font-black tracking-tighter cursor-pointer"
+          className="text-[var(--accent-primary)] text-2xl font-black tracking-tighter cursor-pointer focus-ring rounded-md p-1"
         >
-          Nico<span className={isScrolled ? "!text-white" : "text-[#241431] dark:text-white"}>Dev</span>
+          Nico<span className={isScrolled ? "text-[var(--text-primary)]" : "text-[var(--text-primary)]"}>Dev</span>
         </motion.h1>
 
         <div className="hidden md:flex space-x-8 items-center text-sm font-bold uppercase tracking-widest">
@@ -75,25 +75,25 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className={`relative transition-colors duration-300 group ${isScrolled ? "text-white/80 hover:text-[#2DD4BF]" : "text-[#241431]/70 hover:text-[#2DD4BF] dark:text-white/80"
-                } ${activeSection === link.href.slice(1) ? "!text-[#2DD4BF]" : ""}`}
+              className={`relative transition-colors duration-300 group focus-ring rounded-md p-1 ${isScrolled ? "text-[var(--text-primary)]/80 hover:text-[var(--accent-primary)]" : "text-[var(--text-primary)]/70 hover:text-[var(--accent-primary)]"
+                } ${activeSection === link.href.slice(1) ? "text-[var(--accent-primary)]" : ""}`}
             >
               {link.name}
-              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#2DD4BF] transition-all duration-300 group-hover:w-full`}></span>
+              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-primary)] transition-all duration-300 group-hover:w-full`}></span>
               {activeSection === link.href.slice(1) && (
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#2DD4BF]"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[var(--accent-primary)]"></span>
               )}
             </a>
           ))}
 
-          {/* BOTÓN SOBRE MÍ: Usamos !text-white para ganar la prioridad del CSS global */}
+          {/* About button with theme variables */}
           <motion.a
             href="#about"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`px-6 py-2.5 rounded-full text-xs font-black !text-white transition-all duration-300 shadow-lg ${isScrolled
-                ? "bg-[#A855F7] shadow-purple-500/20"
-                : "bg-[#241431] shadow-black/10"
+            className={`px-6 py-2.5 rounded-full text-xs font-black text-white transition-all duration-300 shadow-lg focus-ring ${isScrolled
+                ? "bg-[var(--accent-secondary)] shadow-[var(--accent-secondary)]/20"
+                : "bg-[var(--accent-secondary)] shadow-black/10"
               }`}
           >
             {t("navbar.about")}
@@ -101,25 +101,24 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <div className={`p-1 rounded-xl transition-all duration-300 border ${isScrolled ? "bg-[var(--bg-primary)] border-white/10" : "bg-[var(--bg-primary)] border-black/10"
+          <div className={`p-1 rounded-xl transition-all duration-300 border focus-within:ring-2 focus-within:ring-[var(--accent-primary)] ${isScrolled ? "bg-[var(--surface-0)] border-[var(--border-color)]" : "bg-[var(--surface-0)] border-[var(--border-color)]"
             }`}>
             <LanguageSwitcher />
           </div>
           <button
             type="button"
-            aria-label={theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+            aria-label={t(theme === "dark" ? "theme.light_mode" : "theme.dark_mode")}
             onClick={toggleTheme}
-            /* Agregué !text-[#241431] para que la luna sea visible y oscura en modo claro */
-            className={`p-2 rounded-xl transition-all duration-300 border ${isScrolled
-                ? "bg-[var(--bg-primary)] border-white/10 !text-[var(--text-primary)]"
-                : "bg-[var(--bg-primary)] border-black/10 !text-[#241431] dark:!text-white"
-              } hover:scale-105 hover:bg-[#2DD4BF]/10`}
-            title={theme === "dark" ? "Modo claro" : "Modo oscuro"}
+            className={`p-2 rounded-xl transition-all duration-300 border focus-ring ${isScrolled
+                ? "bg-[var(--surface-0)] border-[var(--border-color)] text-[var(--text-primary)]"
+                : "bg-[var(--surface-0)] border-[var(--border-color)] text-[var(--text-primary)]"
+              } hover:scale-105 hover:bg-[var(--accent-primary)]/10`}
+            title={t(theme === "dark" ? "theme.light_mode" : "theme.dark_mode")}
           >
             {theme === "dark" ? (
               <Sun size={18} className="text-yellow-400" />
             ) : (
-              <Moon size={18} className="!text-[#241431]" />
+              <Moon size={18} className="text-[var(--text-primary)]" />
             )}
           </button>
         </div>
