@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Mail, Linkedin, Send } from "lucide-react";
 import { motion } from "framer-motion";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface FormData {
   name: string;
@@ -15,9 +16,11 @@ interface Props {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
   loading: boolean;
+  verificationLoading: boolean;
+  recaptchaRef: React.RefObject<ReCAPTCHA | null>;
 }
 
-function Contact({ form, handleSubmit, handleChange, loading }: Props) {
+function Contact({ form, handleSubmit, handleChange, loading, verificationLoading, recaptchaRef }: Props) {
   const { t } = useTranslation();
 
   return (
@@ -66,7 +69,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               onChange={handleChange}
               required
               autoComplete="name"
-              disabled={loading}
+              disabled={loading || verificationLoading}
             />
 
             <label htmlFor="email" className="sr-only">{t("contact.email_placeholder")}</label>
@@ -80,7 +83,7 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               onChange={handleChange}
               required
               autoComplete="email"
-              disabled={loading}
+              disabled={loading || verificationLoading}
             />
 
             <label htmlFor="message" className="sr-only">{t("contact.message_placeholder")}</label>
@@ -94,23 +97,30 @@ function Contact({ form, handleSubmit, handleChange, loading }: Props) {
               onChange={handleChange}
               required
               autoComplete="off"
-              disabled={loading}
+              disabled={loading || verificationLoading}
             />
 
+            <div className="flex justify-center my-2">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                theme="dark" // Optional: matches your portfolio style
+              />
+            </div>
+
             <motion.button
-              whileHover={{ scale: loading ? 1 : 1.02 }}
-              whileTap={{ scale: loading ? 1 : 0.98 }}
+              whileHover={{ scale: (loading || verificationLoading) ? 1 : 1.02 }}
+              whileTap={{ scale: (loading || verificationLoading) ? 1 : 0.98 }}
               type="submit"
-              disabled={loading}
+              disabled={loading || verificationLoading}
               className={`group mt-4 font-bold py-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 focus-ring
-                ${
-                  loading
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-[var(--accent-secondary)] hover:bg-[var(--accent-secondary)]/90 text-white shadow-lg shadow-[var(--accent-secondary)]/30"
+                ${loading
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-[var(--accent-secondary)] hover:bg-[var(--accent-secondary)]/90 text-white shadow-lg shadow-[var(--accent-secondary)]/30"
                 }
               `}
             >
-              {loading ? "Enviando..." : t("contact.submit_button")}
+              {loading ? "Enviando..." : verificationLoading ? "Verificando..." : t("contact.submit_button")}
               {!loading && (
                 <Send
                   size={18}
