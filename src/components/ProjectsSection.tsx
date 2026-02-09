@@ -18,8 +18,8 @@ const containerVariants: Variants = {
 // 2. Variantes para el encabezado
 const headerVariants: Variants = {
   hidden: { opacity: 0, x: -30 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     x: 0,
     transition: { duration: 0.6, ease: "easeOut" }
   }
@@ -34,17 +34,17 @@ const ProjectsSection = () => {
       id: 1,
       title: t("projectd.0.title"), // Asegúrate que en tu JSON existan estas llaves
       description: t("projectd.0.description"),
-      technologies: ["Svelte", "Calendly", "Tailwind"], // Las tecnologías suelen ser fijas
+      technologies: ["Next.js", "Calendly", "Tailwind", "PWA", "Supabase", "Auth0"], // Las tecnologías suelen ser fijas
       imageSrc: "/barber.png",
-      liveUrl: "https://labarber-rho.vercel.app/",
-      repoUrl: "https://github.com/nicod12/labarber",
+      liveUrl: "https://final-barber-tullok.vercel.app/",
+      repoUrl: "",
       linkText: t("projects.linkText"),
     },
     {
       id: 2,
       title: t("projectd.1.title"), // Ejemplo de llaves consistentes
       description: t("projectd.1.description"),
-      technologies: ["HTML5", "CSS3","Bootstrap", "JavaScript"],
+      technologies: ["HTML5", "CSS3", "Bootstrap", "JavaScript"],
       imageSrc: "/sp.png",
       liveUrl: "https://andreaguinder.github.io/supermercado-andy-nico/",
       repoUrl: "https://github.com/andreaguinder/supermercado-andy-nico",
@@ -54,7 +54,7 @@ const ProjectsSection = () => {
       id: 3,
       title: t("projectd.2.title"),
       description: t("projectd.2.description"),
-      technologies: ["NestJS", "TypeScript","TypeORM", "Socket.io", "MySQL", "Mercado Pago"],
+      technologies: ["NestJS", "TypeScript", "TypeORM", "Socket.io", "MySQL", "Mercado Pago"],
       imageSrc: "/veterinary_symbol.svg",
       liveUrl: "https://github.com/NicolasArtemio/apiv1-vet",
       repoUrl: "https://github.com/NicolasArtemio/apiv1-vet",
@@ -65,9 +65,9 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="section-decor bg-[var(--bg-primary)] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
       <div className="max-w-7xl mx-auto relative z-10">
-        
+
         {/* Encabezado animado */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -107,7 +107,7 @@ const ProjectsSection = () => {
         </motion.div>
 
         {/* Grid de Proyectos */}
-        <motion.div 
+        <motion.div
           className="grid gap-10 lg:grid-cols-3 md:grid-cols-2"
           variants={containerVariants}
           initial="hidden"

@@ -39,8 +39,8 @@
   },
   "projectd": [
     {
-      "title": "Barbería & Reservas",
-      "description": "Landing page moderna con sistema de turnos integrado",
+      "title": "Tulook: Barbería & Fidelización AI",
+      "description": "Plataforma de gestión integral con marketing automatizado, panel de recompensas y experiencia de usuario fluida.",
       "technologies": [
         "SVELTE",
         "CALENDLY",

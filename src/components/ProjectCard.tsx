@@ -59,7 +59,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         <div className="flex flex-col flex-1 p-6">
           {/* Technology badges */}
           <div className="flex flex-wrap gap-2 mb-4">
-            {project.technologies.slice(0, 4).map((tech, index) => (
+            {project.technologies.map((tech, index) => (
               <span
                 key={index}
                 className="text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-gradient-to-r from-[var(--accent-primary)]/10 to-[var(--accent-secondary)]/10 text-[var(--text-primary)] border border-[var(--accent-primary)]/20 transition-all duration-300 group-hover:border-[var(--accent-primary)]/40 group-hover:from-[var(--accent-primary)]/20 group-hover:to-[var(--accent-secondary)]/20"
@@ -67,11 +67,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 {tech}
               </span>
             ))}
-            {project.technologies.length > 4 && (
-              <span className="text-[11px] font-bold px-3 py-1.5 rounded-full bg-[var(--surface-2)] text-[var(--text-primary)]/60">
-                +{project.technologies.length - 4}
-              </span>
-            )}
           </div>
 
           {/* Title */}
@@ -80,7 +75,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </h3>
 
           {/* Description */}
-          <p className="text-sm text-[var(--text-primary)]/70 leading-relaxed mb-4 line-clamp-2">
+          <p className="text-sm text-[var(--text-primary)]/70 leading-relaxed mb-4">
             {project.description}
           </p>
 

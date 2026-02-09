@@ -39,8 +39,8 @@
   },
   "projectd": [
     {
-      "title": "Barber & Bookings",
-      "description": "Modern landing page with integrated booking system",
+      "title": "AI Barbering & Loyalty",
+      "description": "A comprehensive management platform featuring automated marketing, a rewards dashboard, and a seamless user experience.",
       "technologies": [
         "SVELTE",
         "CALENDLY",
