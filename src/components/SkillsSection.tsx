@@ -16,17 +16,17 @@ const SkillsData = [
   {
     icon: faCode,
     color: "bg-[var(--accent-primary)]",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "JavaScript", "HTML5", "CSS3"],
+    technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Zustand"],
   },
   {
     icon: faDatabase,
     color: "bg-[var(--accent-secondary)]",
-    technologies: ["Node.js", "NestJs", "Express", "MongoDB", "MYSQL", "REST APIs"],
+    technologies: ["Node.js", "NestJs", "Express", "MongoDB", "PostgreSQL", "REST APIs", "Socket.io"],
   },
   {
     icon: faPuzzlePiece,
     color: "bg-[var(--text-primary)]/60",
-    technologies: ["Git", "GitHub", "Jira", "Figma", "Docker", "Scrum", "Postman"],
+    technologies: ["Git", "GitHub", "Jira", "Figma", "Docker", "Scrum", "Postman", "Gemini API", "Notion"],
   },
 ];
 
@@ -44,10 +44,10 @@ const containerVariants: Variants = {
 // 2. Variantes para que el título aparezca desde la derecha
 const titleVariants: Variants = {
   hidden: { opacity: 0, x: 30 },
-  visible: { 
-    opacity: 1, 
-    x: 0, 
-    transition: { duration: 0.6, ease: "easeOut" } 
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
   }
 };
 
@@ -70,9 +70,9 @@ const SkillsSection = () => {
       className="section-decor py-24 px-4 sm:px-6 lg:px-8 overflow-hidden relative bg-[var(--surface-0)] dark:bg-[var(--surface-1-dark)] text-[var(--text-primary)]"
     >
       <div className="max-w-7xl mx-auto relative z-10">
-        
+
         {/* Cabecera Animada */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -105,7 +105,7 @@ const SkillsSection = () => {
         </motion.div>
 
         {/* Grid de Habilidades con Stagger */}
-        <motion.div 
+        <motion.div
           className="grid gap-10 md:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
           initial="hidden"

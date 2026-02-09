@@ -34,7 +34,7 @@ const ProjectsSection = () => {
       id: 1,
       title: t("projectd.0.title"), // Asegúrate que en tu JSON existan estas llaves
       description: t("projectd.0.description"),
-      technologies: ["Next.js", "Calendly", "Tailwind", "PWA", "Supabase", "Auth0"], // Las tecnologías suelen ser fijas
+      technologies: ["Next.js", "GROQ", "Calendly", "Tailwind", "PWA", "Supabase", "Auth0"], // Las tecnologías suelen ser fijas
       imageSrc: "/barber.png",
       liveUrl: "https://final-barber-tullok.vercel.app/",
       repoUrl: "",
@@ -44,20 +44,20 @@ const ProjectsSection = () => {
       id: 2,
       title: t("projectd.1.title"), // Ejemplo de llaves consistentes
       description: t("projectd.1.description"),
-      technologies: ["HTML5", "CSS3", "Bootstrap", "JavaScript"],
+      technologies: ["React", "Tailwind", "Axios", "Zustand", 'PWA', 'PostgreSQL', 'Auth0', 'NestJS'],
       imageSrc: "/sp.png",
-      liveUrl: "https://andreaguinder.github.io/supermercado-andy-nico/",
-      repoUrl: "https://github.com/andreaguinder/supermercado-andy-nico",
+      liveUrl: "https://frontend-basv1.vercel.app/",
+      repoUrl: "https://github.com/NicolasArtemio/frontend-basv1",
       linkText: t("projects.linkText"),
     },
     {
       id: 3,
       title: t("projectd.2.title"),
       description: t("projectd.2.description"),
-      technologies: ["NestJS", "TypeScript", "TypeORM", "Socket.io", "MySQL", "Mercado Pago"],
-      imageSrc: "/veterinary_symbol.svg",
-      liveUrl: "https://github.com/NicolasArtemio/apiv1-vet",
-      repoUrl: "https://github.com/NicolasArtemio/apiv1-vet",
+      technologies: ["NestJS", "TypeScript", 'PostgreSQL', 'Google Gemini AI', "Mercado Pago", "Socket.io", "Docker"],
+      imageSrc: "/veterinary_symbol.png",
+      liveUrl: "https://appvetfront-sable.vercel.app/",
+      repoUrl: "",
       linkText: t("projects.linkText"),
     },
   ];

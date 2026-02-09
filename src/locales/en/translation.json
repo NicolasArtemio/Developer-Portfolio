@@ -51,19 +51,19 @@
       "repoUrl": "https://github.com/nicod12/labarber"
     },
     {
-      "title": "Supermercado ANLAS",
-      "description": "E-commerce platform for a local supermarket",
+      "title": "BAS Pet Shop",
+      "description": "E-commerce platform for a local pet shop",
       "technologies": [
         "REACT",
         "FIREBASE"
       ],
       "imageSrc": "/sp.png",
-      "liveUrl": "https://andreaguinder.github.io/supermercado-andy-nico/",
-      "repoUrl": "https://github.com/andreaguinder/supermercado-andy-nico"
+      "liveUrl": "https://frontend-basv1.vercel.app/",
+      "repoUrl": "https://github.com/NicolasArtemio/frontend-basv1"
     },
     {
-      "title": "Veterinary Clinic Digitalization Platform",
-      "description": "Veterinary management platform with digitalization of clinic operations",
+      "title": "VET-CORE: AI-Driven Clinical Engine",
+      "description": "Enterprise-grade backend for veterinary hospitals featuring real-time AI triage, automated clinical summaries, and secure payment processing.",
       "technologies": [
         "NESTJS",
         "TYPEORM",
@@ -72,8 +72,8 @@
         "MERCADOPAGO"
       ],
       "imageSrc": "/vet.png",
-      "liveUrl": "https://github.com/NicolasArtemio/apiv1-vet",
-      "repoUrl": "https://github.com/NicolasArtemio/apiv1-vet"
+      "liveUrl": "https://appvetfront-sable.vercel.app/",
+      "repoUrl": ""
     }
   ],
   "projects": {
@@ -99,7 +99,7 @@
       {
         "name": "Andrea Belén Guinder Vichich",
         "position": "Frontend Developer",
-        "quote": "Working with Nicolás on our Mobile-First web project was a great experience. He has an incredible analytical capacity and a strong command of JavaScript. His ability to handle complex logic and data manipulation was essential for building such efficient and clean code"
+        "quote": "He is a remarkably proactive professional who always strives for the best technical solutions, allowing us to achieve excellence in our results. Thanks to his performance, we were both recommended for roles at a leading company in the sector upon completing the project. I highly recommend him for any development team looking for technical proficiency and commitment."
       },
       {
         "name": "Celeste Ruspil",

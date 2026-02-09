@@ -51,8 +51,8 @@
       "repoUrl": "https://github.com/nicod12/labarber"
     },
     {
-      "title": "Supermercado ANLAS",
-      "description": "Sistema de e-commerce para un supermercado local",
+      "title": "BAS Pet Shop",
+      "description": "Sistema de e-commerce para una tienda de mascotas local",
       "technologies": [
         "HTML5",
         "CSS3",
@@ -60,12 +60,12 @@
         "JavaScript"
       ],
       "imageSrc": "/sp.png",
-      "liveUrl": "https://andreaguinder.github.io/supermercado-andy-nico/",
-      "repoUrl": "https://github.com/andreaguinder/supermercado-andy-nico"
+      "liveUrl": "https://frontend-basv1.vercel.app/",
+      "repoUrl": "https://github.com/NicolasArtemio/frontend-basv1"
     },
     {
-      "title": "Sistema de gestión veterinaria",
-      "description": "Plataforma de gestión veterinaria y digitalización de procesos clínicos.",
+      "title": "VET-CORE: Motor Clínico Impulsado por IA",
+      "description": "Backend de nivel empresarial para hospitales veterinarios, con triaje por IA en tiempo real, resúmenes clínicos automatizados y procesamiento de pagos seguro.",
       "technologies": [
         "NestJS",
         "TypeScript",
@@ -75,8 +75,8 @@
         "Mercado Pago"
       ],
       "imageSrc": "/sp.png",
-      "liveUrl": "https://github.com/NicolasArtemio/apiv1-vet",
-      "repoUrl": "https://github.com/NicolasArtemio/apiv1-vet"
+      "liveUrl": "https://appvetfront-sable.vercel.app/",
+      "repoUrl": ""
     }
   ],
   "projects": {
@@ -102,7 +102,7 @@
       {
         "name": "Andrea Belén Guinder Vichich",
         "position": "Desarrolladora Frontend",
-        "quote": "Tuve el placer de trabajar junto a Nicolás en el desarrollo de un proyecto web con orientación Mobile First, utilizando HTML, CSS, JavaScript y JSON. Lo que más destaco de su perfil es su capacidad analítica y su impresionante dominio de JavaScript; su destreza en la lógica de programación y la manipulación de datos fue clave para estructurar un código limpio y eficiente."
+        "quote": "Es un profesional con una proactividad notable, siempre buscando la mejor solución técnica, lo que nos permitió lograr resultados de excelencia. Gracias a este desempeño, ambos fuimos recomendados para búsquedas laborales en una empresa del sector al finalizar el proyecto. Lo recomiendo ampliamente para cualquier equipo de desarrollo que busque solidez técnica y compromiso."
       },
       {
         "name": "Celeste Ruspil",
