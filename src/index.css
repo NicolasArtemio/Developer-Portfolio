@@ -1,14 +1,17 @@
 @import "tailwindcss";
+@import "./styles/tokens.css";
 
 /* --- 1. TUS DECORACIONES DE FONDO (INTACTAS) --- */
 .section-decor {
   position: relative;
   /* Quitamos el bg-color y la sombra para que no parezca un borde */
-  background-color: transparent !important; 
+  background-color: transparent !important;
   padding: 4rem 1rem;
   border-radius: 1rem;
-  box-shadow: none !important; /* Adiós a la sombra que parece borde */
+  box-shadow: none !important;
+  /* Adiós a la sombra que parece borde */
 }
+
 .section-decor::before {
   content: "";
   position: absolute;
@@ -49,53 +52,19 @@ body.dark .section-decor {
   }
 }
 
-/* --- 3. VARIABLES DE COLOR (MEJORADO PARA CONSISTENCIA) --- */
-:root {
-  /* Light theme colors */
-  --bg-primary: #ffffff;
-  --text-primary: #0f172a;
-  --border-color: #e5e7eb;
-
-  --surface-0-light: #f8fafc;
-  --surface-1-light: #ffffff;
-  --surface-2-light: #f1f5f9;
-  --text-light: #0f172a;
-
-  /* Dark theme colors - improved for better contrast */
-  --surface-0-dark: #0f172a;
-  --surface-1-dark: #1e293b;
-  --surface-2-dark: #334155;
-  --text-dark: #f8fafc;
-
-  /* Brand colors - now theme-aware */
-  --accent-primary: #2dd4bf; /* Teal */
-  --accent-secondary: #a855f7; /* Purple */
-  --accent-success: #10b981; /* Green */
-
-  /* Dynamic surface variables */
-  --surface-0: var(--surface-0-light);
-  --surface-1: var(--surface-1-light);
-  --surface-2: var(--surface-2-light);
-}
-
-body.dark {
-  /* AQUÍ ESTABA EL ERROR: Cambiado de #121212 a tu Azul */
-  --bg-primary: var(--surface-0-dark) !important; 
-  --text-primary: var(--text-dark) !important;
-  --border-color: #334155 !important;
-
-  --surface-0: var(--surface-0-dark);
-  --surface-1: var(--surface-1-dark);
-  --surface-2: var(--surface-2-dark);
-}
-
 /* --- 4. TUS REGLAS GLOBALES Y CARDS (INTACTAS) --- */
 * {
   border-color: var(--border-color) !important;
   color: inherit;
 }
 
-h1, h2, h3, h4, p, span, label {
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+label {
   color: var(--text-primary) !important;
 }
 
@@ -118,7 +87,8 @@ body {
   color: var(--text-primary);
 }
 
-#root, main {
+#root,
+main {
   background-color: transparent !important;
 }
 
@@ -144,8 +114,15 @@ body.dark .reference-card {
 
 /* --- 5. ANIMATIONS AND UTILITIES --- */
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .animate-blink {
@@ -187,4 +164,40 @@ body.dark .reference-card {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-secondary);
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card glow effect */
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.card-glow:hover::before {
+  opacity: 0.3;
 }

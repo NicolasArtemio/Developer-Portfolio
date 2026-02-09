@@ -6,12 +6,12 @@
     "home": "Inicio",
     "projects": "Proyectos",
     "about": "Sobre mí",
-     "refer": "Referencias",
+    "refer": "Referencias",
     "contact": "Contacto"
   },
   "about": {
     "title": "Sobre mí",
-    "description": "Desarrollador Full Stack enfocado en TypeScript, React y NestJS. Experto en diseñar arquitecturas escalables, sistemas de pago y flujos de autenticación segura. Mi objetivo es combinar solidez técnica en el backend con interfaces de alta conversión, preparándome para liderar el futuro de la tecnología como Tech Lead"
+    "description": "Desarrollador Full Stack con foco en TypeScript, React, Next.js y NestJS, orientado a la construcción de productos escalables y seguros.Especializado en arquitecturas backend, integraciones de pago, autenticación y autorización, y frontends optimizados para SEO, performance y conversión. Mi objetivo es crecer hacia un rol de Tech Lead, combinando visión técnica, buenas prácticas y toma de decisiones estratégicas."
   },
   "hero": {
     "role": "Fullstack Dev",
@@ -104,7 +104,7 @@
         "position": "Desarrolladora Frontend",
         "quote": "Tuve el placer de trabajar junto a Nicolás en el desarrollo de un proyecto web con orientación Mobile First, utilizando HTML, CSS, JavaScript y JSON. Lo que más destaco de su perfil es su capacidad analítica y su impresionante dominio de JavaScript; su destreza en la lógica de programación y la manipulación de datos fue clave para estructurar un código limpio y eficiente."
       },
-            {
+      {
         "name": "Celeste Ruspil",
         "position": "Desarrolladora Full Stack",
         "quote": "Quiero destacar y recomendar a Nicolás,con quien compartí dos años de la carrera de Desarrollador Web Full Stack. Durante todo ese tiempo demostró no solo un gran nivel técnico, sino también una enorme calidad humana. Siempre estuvo dispuesto a ayudar, enseñar y acompañar con paciencia, lo que hizo una diferencia clave en mi proceso de aprendizaje. Gracias a su apoyo constante aprendí muchísimo y pude afianzar conceptos fundamentales, mejorar mi forma de pensar como programadora y ganar confianza. Su actitud colaborativa, compromiso y pasión por lo que hace lo convierten en un excelente profesional y en un gran compañero de equipo. Sin dudas, una persona que suma valor en cualquier entorno de trabajo."

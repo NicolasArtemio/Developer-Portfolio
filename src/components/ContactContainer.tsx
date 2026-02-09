@@ -1,107 +1,98 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
+import { toast } from "sonner";
+
 import Contact from "./Contact";
-import ContactSuccess from "./ContactSuccess";
-import ContactError from "./ContactError";
 import { verifyEmail } from "../services/EmailVerificationService";
+import { contactSchema } from "../lib/validations/contact";
+import type { ContactFormData } from "../lib/validations/contact";
 
 const ContactContainer = () => {
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        message: "",
+    const form = useForm<ContactFormData>({
+        resolver: zodResolver(contactSchema),
+        defaultValues: {
+            name: "",
+            email: "",
+            message: "",
+        },
     });
 
-    const [loading, setLoading] = useState(false);
-    const [verificationLoading, setVerificationLoading] = useState(false);
-    const [success, setSuccess] = useState(false);
-    const [error, setError] = useState(false);
+    const {
+        handleSubmit,
+        reset,
+        formState: { isSubmitting, errors },
+    } = form;
 
     // reCAPTCHA ref
     const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-        setForm({
-            ...form,
-            [e.target.name]: e.target.value,
-        });
-    };
-
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
+    // Track verification state separately
+    const onSubmit = async (data: ContactFormData) => {
         // Step 1: Check if reCAPTCHA is completed
         const recaptchaValue = recaptchaRef.current?.getValue();
         if (!recaptchaValue) {
-            alert("Por favor, completa el reCAPTCHA.");
+            toast.error("reCAPTCHA requerido", {
+                description: "Por favor, completa el reCAPTCHA.",
+            });
             return;
         }
 
-        // Start "Loading" state for the whole process
-        setVerificationLoading(true);
-
         try {
             // Step 2: Verify Email via Abstract API
-            const isDeliverable = await verifyEmail(form.email);
+            toast.loading("Verificando email...", { id: "contact-form" });
+            const isDeliverable = await verifyEmail(data.email);
 
             if (!isDeliverable) {
-                setError(true);
-                setVerificationLoading(false);
+                toast.error("Email no válido", {
+                    id: "contact-form",
+                    description: "El email ingresado no parece ser válido o entregable.",
+                });
                 return;
             }
 
             // Step 3: Send Email via EmailJS
-            setLoading(true);
-            setVerificationLoading(false); // Switch to sending state
+            toast.loading("Enviando mensaje...", { id: "contact-form" });
 
             await emailjs.send(
                 import.meta.env.VITE_EMAILJS_SERVICE_ID,
                 import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 {
-                    name: form.name,
-                    email: form.email,
-                    message: form.message,
-                    "g-recaptcha-response": recaptchaValue, // Optional: pass to EmailJS if configured
+                    name: data.name,
+                    email: data.email,
+                    message: data.message,
+                    "g-recaptcha-response": recaptchaValue,
                 },
                 import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             );
 
-            setForm({ name: "", email: "", message: "" });
-            setSuccess(true);
+            reset();
             recaptchaRef.current?.reset();
+
+            toast.success("¡Mensaje enviado!", {
+                id: "contact-form",
+                description: "Gracias por contactarme. Te responderé pronto.",
+            });
         } catch (error) {
             console.error("Error en el proceso de envío:", error);
-            setError(true);
-        } finally {
-            setLoading(false);
-            setVerificationLoading(false);
+            toast.error("Error al enviar", {
+                id: "contact-form",
+                description: "Hubo un problema al enviar tu mensaje. Intenta de nuevo.",
+            });
         }
     };
 
     return (
-        <>
-            <Contact
-                form={form}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-                loading={loading}
-                verificationLoading={verificationLoading}
-                recaptchaRef={recaptchaRef}
-            />
-
-            <ContactSuccess
-                open={success}
-                onClose={() => setSuccess(false)}
-            />
-
-            <ContactError
-                open={error}
-                onClose={() => setError(false)}
-            />
-        </>
+        <Contact
+            form={form}
+            onSubmit={handleSubmit(onSubmit)}
+            loading={isSubmitting}
+            verificationLoading={false}
+            recaptchaRef={recaptchaRef}
+            errors={errors}
+        />
     );
 };
 

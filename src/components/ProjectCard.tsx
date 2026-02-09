@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { motion, type Variants } from "framer-motion";
 import LazyImage from "./LazyImage";
 
@@ -17,9 +17,9 @@ interface ProjectCardProps {
 }
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { duration: 0.5, ease: "easeOut" }
   }
@@ -32,40 +32,63 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       href={project.liveUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block p-5 bg-[var(--surface-1)] backdrop-blur-xl ring-1 ring-[var(--border-color)] rounded-[2rem] transition-all duration-300 hover:shadow-2xl hover:shadow-[var(--accent-secondary)]/10 transform hover:-translate-y-2 hover:ring-[var(--accent-secondary)]/30 focus-ring"
+      className="group relative flex flex-col overflow-hidden rounded-3xl bg-[var(--surface-1)] border border-[var(--border-color)] transition-all duration-500 hover:border-[var(--accent-primary)]/50 hover:shadow-[0_20px_50px_-12px] hover:shadow-[var(--accent-secondary)]/20 focus-ring"
     >
-      <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
-        <div className="w-full sm:w-28 sm:h-28 h-40 bg-[var(--surface-2)] rounded-2xl overflow-hidden flex-shrink-0 ring-1 ring-[var(--border-color)]">
+      {/* Glow effect on hover */}
+      <div className="absolute -inset-px rounded-3xl bg-gradient-to-r from-[var(--accent-primary)] via-[var(--accent-secondary)] to-[var(--accent-primary)] opacity-0 blur-sm transition-opacity duration-500 group-hover:opacity-30" />
+
+      {/* Card content wrapper */}
+      <div className="relative flex flex-col h-full bg-[var(--surface-1)] rounded-3xl overflow-hidden">
+        {/* Image container with overlay */}
+        <div className="relative aspect-video overflow-hidden">
           <LazyImage
             src={project.imageSrc}
-            alt={`Captura de ${project.title}`}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            alt={`Preview de ${project.title}`}
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface-1)] via-transparent to-transparent opacity-60" />
+
+          {/* External link icon */}
+          <div className="absolute top-4 right-4 p-2 rounded-full bg-[var(--surface-0)]/80 backdrop-blur-sm opacity-0 transform translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+            <FontAwesomeIcon icon={faExternalLinkAlt} className="text-[var(--accent-primary)] text-sm" />
+          </div>
         </div>
 
-        <div className="flex-1 text-center sm:text-left">
-          <h3 className="text-xl font-black text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent-secondary)] transition-colors">
-            {project.title}
-          </h3>
-          <p className="text-sm text-[var(--text-primary)] opacity-80">
-            {project.description}
-          </p>
-
-          <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-4">
-            {project.technologies.map((tech, index) => (
+        {/* Content */}
+        <div className="flex flex-col flex-1 p-6">
+          {/* Technology badges */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.technologies.slice(0, 4).map((tech, index) => (
               <span
                 key={index}
-                className="text-[10px] font-black uppercase tracking-wider bg-[var(--surface-2)] text-[var(--text-primary)] px-3 py-1 rounded-lg ring-1 ring-[var(--accent-primary)]/30"
+                className="text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-gradient-to-r from-[var(--accent-primary)]/10 to-[var(--accent-secondary)]/10 text-[var(--text-primary)] border border-[var(--accent-primary)]/20 transition-all duration-300 group-hover:border-[var(--accent-primary)]/40 group-hover:from-[var(--accent-primary)]/20 group-hover:to-[var(--accent-secondary)]/20"
               >
                 {tech}
               </span>
             ))}
+            {project.technologies.length > 4 && (
+              <span className="text-[11px] font-bold px-3 py-1.5 rounded-full bg-[var(--surface-2)] text-[var(--text-primary)]/60">
+                +{project.technologies.length - 4}
+              </span>
+            )}
           </div>
 
-          <div className="text-[var(--accent-secondary)] text-sm font-bold flex items-center justify-center sm:justify-start">
+          {/* Title */}
+          <h3 className="text-xl font-black text-[var(--text-primary)] mb-2 transition-colors duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[var(--accent-primary)] group-hover:to-[var(--accent-secondary)]">
+            {project.title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-sm text-[var(--text-primary)]/70 leading-relaxed mb-4 line-clamp-2">
+            {project.description}
+          </p>
+
+          {/* CTA - pushed to bottom */}
+          <div className="mt-auto flex items-center text-[var(--accent-secondary)] font-bold text-sm">
             <span className="relative">
               {project.linkText}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--accent-secondary)] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] transition-all duration-300 group-hover:w-full" />
             </span>
             <FontAwesomeIcon
               icon={faArrowRight}

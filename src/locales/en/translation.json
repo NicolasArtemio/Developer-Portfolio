@@ -11,7 +11,7 @@
   },
   "about": {
     "title": "About Me",
-    "description": "Full Stack Developer with a focus on TypeScript, React, and NestJS. Experienced in designing scalable architectures, payment systems, and secure authentication flows. My goal is to combine solid technical backend skills with high-conversion frontend interfaces, preparing myself to lead the future of technology as a Tech Lead."
+    "description": "Full Stack Developer focused on TypeScript, React, Next.js, and NestJS, oriented toward building scalable and secure products. Specialized in backend architectures, payment integrations, authentication and authorization, and frontends optimized for SEO, performance, and conversion. My goal is to grow into a Tech Lead role, combining technical vision, best practices, and strategic decision-making."
   },
   "hero": {
     "role": "Fullstack Dev",
@@ -19,11 +19,9 @@
     "architecture": "Clean Architecture",
     "cta_button": "View Featured Projects"
   },
-
   "skills": {
     "main_title": "Technical Skills",
     "main_description": "The tools I use to transform ideas into digital reality.",
-
     "cards": [
       {
         "title": "Frontend Development",
@@ -39,12 +37,15 @@
       }
     ]
   },
-
   "projectd": [
     {
       "title": "Barber & Bookings",
       "description": "Modern landing page with integrated booking system",
-      "technologies": ["SVELTE", "CALENDLY", "CSS/TAILWIND"],
+      "technologies": [
+        "SVELTE",
+        "CALENDLY",
+        "CSS/TAILWIND"
+      ],
       "imageSrc": "/barber.png",
       "liveUrl": "https://labarber-rho.vercel.app/",
       "repoUrl": "https://github.com/nicod12/labarber"
@@ -52,7 +53,10 @@
     {
       "title": "Supermercado ANLAS",
       "description": "E-commerce platform for a local supermarket",
-      "technologies": ["REACT", "FIREBASE"],
+      "technologies": [
+        "REACT",
+        "FIREBASE"
+      ],
       "imageSrc": "/sp.png",
       "liveUrl": "https://andreaguinder.github.io/supermercado-andy-nico/",
       "repoUrl": "https://github.com/andreaguinder/supermercado-andy-nico"
@@ -60,7 +64,13 @@
     {
       "title": "Veterinary Clinic Digitalization Platform",
       "description": "Veterinary management platform with digitalization of clinic operations",
-      "technologies": ["NESTJS", "TYPEORM", "SOCKET.IO", "MYSQL", "MERCADOPAGO"],
+      "technologies": [
+        "NESTJS",
+        "TYPEORM",
+        "SOCKET.IO",
+        "MYSQL",
+        "MERCADOPAGO"
+      ],
       "imageSrc": "/vet.png",
       "liveUrl": "https://github.com/NicolasArtemio/apiv1-vet",
       "repoUrl": "https://github.com/NicolasArtemio/apiv1-vet"
@@ -72,7 +82,7 @@
     "tab": "All Projects",
     "linkText": "View Project"
   },
-"references": {
+  "references": {
     "title": "References",
     "tagline": "What my colleagues say about working with me.",
     "reference": [
@@ -91,23 +101,19 @@
         "position": "Frontend Developer",
         "quote": "Working with Nicolás on our Mobile-First web project was a great experience. He has an incredible analytical capacity and a strong command of JavaScript. His ability to handle complex logic and data manipulation was essential for building such efficient and clean code"
       },
-            {
+      {
         "name": "Celeste Ruspil",
         "position": "Full Stack Developer",
         "quote": "I want to highlight and recommend Nicolás, with whom I shared two years in the Full Stack Web Development program. Throughout that time, he demonstrated not only high-level technical skills but also exceptional human qualities. He was always willing to help and mentor with patience, which made a key difference in my learning process.Thanks to his constant support, I was able to solidify fundamental concepts, improve my logic as a developer, and gain confidence. His collaborative attitude, commitment, and passion make him an outstanding professional and a great teammate. He undoubtedly adds immense value to any work environment."
       }
     ]
   },
-
-    
   "contact": {
     "title": "Contact",
-
     "name_placeholder": "Name",
     "email_placeholder": "Email",
     "message_placeholder": "Message",
     "submit_button": "Send Message",
-
     "other_options_title": "Other Options",
     "other_options_text": "If you prefer to contact me directly, here is my information:"
   },
@@ -115,5 +121,4 @@
     "copyright": "© {{year}} <span className=\"text-[#1F1D2B]\">Nicolás</span> — <span className=\"ml-1\">Fullstack Developer</span>",
     "status": "Available for Projects"
   }
-
 }

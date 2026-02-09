@@ -2,30 +2,26 @@ import { useTranslation } from "react-i18next";
 import { Mail, Linkedin, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import ReCAPTCHA from "react-google-recaptcha";
-
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
+import type { UseFormReturn, FieldErrors } from "react-hook-form";
+import type { ContactFormData } from "../lib/validations/contact";
 
 interface Props {
-  form: FormData;
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  handleChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
+  form: UseFormReturn<ContactFormData>;
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   loading: boolean;
   verificationLoading: boolean;
   recaptchaRef: React.RefObject<ReCAPTCHA | null>;
+  errors: FieldErrors<ContactFormData>;
 }
 
-function Contact({ form, handleSubmit, handleChange, loading, verificationLoading, recaptchaRef }: Props) {
+function Contact({ form, onSubmit, loading, verificationLoading, recaptchaRef, errors }: Props) {
   const { t } = useTranslation();
+  const { register } = form;
+
+  const isDisabled = loading || verificationLoading;
 
   return (
     <section
-      /* CAMBIO: bg-transparent para que use el azul del body en dark mode */
       className="bg-transparent py-24 px-6 md:px-20 2xl:px-40 overflow-hidden"
       id="contact"
     >
@@ -54,65 +50,76 @@ function Contact({ form, handleSubmit, handleChange, loading, verificationLoadin
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            /* CAMBIO: bg-[var(--surface-1)] y sombras dinámicas */
             className="flex flex-col gap-5 max-w-lg w-full p-8 md:p-10 bg-[var(--surface-1)] rounded-[2.5rem] shadow-2xl dark:shadow-none border border-[var(--border-color)] backdrop-blur-xl"
-            onSubmit={handleSubmit}
+            onSubmit={onSubmit}
           >
-            <label htmlFor="name" className="sr-only">{t("contact.name_placeholder")}</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder={t("contact.name_placeholder")}
-              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] focus:ring-2 focus:ring-[var(--accent-primary)]/50 outline-none transition-all focus-ring"
-              value={form.name}
-              onChange={handleChange}
-              required
-              autoComplete="name"
-              disabled={loading || verificationLoading}
-            />
+            {/* Name Field */}
+            <div className="flex flex-col gap-1">
+              <label htmlFor="name" className="sr-only">{t("contact.name_placeholder")}</label>
+              <input
+                type="text"
+                id="name"
+                placeholder={t("contact.name_placeholder")}
+                className={`w-full p-4 border rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] focus:ring-2 focus:ring-[var(--accent-primary)]/50 outline-none transition-all focus-ring ${errors.name ? "border-red-500" : "border-[var(--border-color)]"
+                  }`}
+                autoComplete="name"
+                disabled={isDisabled}
+                {...register("name")}
+              />
+              {errors.name && (
+                <span className="text-red-500 text-sm mt-1">{errors.name.message}</span>
+              )}
+            </div>
 
-            <label htmlFor="email" className="sr-only">{t("contact.email_placeholder")}</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder={t("contact.email_placeholder")}
-              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] focus:ring-2 focus:ring-[var(--accent-primary)]/50 outline-none transition-all focus-ring"
-              value={form.email}
-              onChange={handleChange}
-              required
-              autoComplete="email"
-              disabled={loading || verificationLoading}
-            />
+            {/* Email Field */}
+            <div className="flex flex-col gap-1">
+              <label htmlFor="email" className="sr-only">{t("contact.email_placeholder")}</label>
+              <input
+                type="email"
+                id="email"
+                placeholder={t("contact.email_placeholder")}
+                className={`w-full p-4 border rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] focus:ring-2 focus:ring-[var(--accent-primary)]/50 outline-none transition-all focus-ring ${errors.email ? "border-red-500" : "border-[var(--border-color)]"
+                  }`}
+                autoComplete="email"
+                disabled={isDisabled}
+                {...register("email")}
+              />
+              {errors.email && (
+                <span className="text-red-500 text-sm mt-1">{errors.email.message}</span>
+              )}
+            </div>
 
-            <label htmlFor="message" className="sr-only">{t("contact.message_placeholder")}</label>
-            <textarea
-              name="message"
-              id="message"
-              placeholder={t("contact.message_placeholder")}
-              rows={5}
-              className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] resize-none focus:ring-2 focus:ring-[var(--accent-primary)]/50 outline-none transition-all focus-ring"
-              value={form.message}
-              onChange={handleChange}
-              required
-              autoComplete="off"
-              disabled={loading || verificationLoading}
-            />
+            {/* Message Field */}
+            <div className="flex flex-col gap-1">
+              <label htmlFor="message" className="sr-only">{t("contact.message_placeholder")}</label>
+              <textarea
+                id="message"
+                placeholder={t("contact.message_placeholder")}
+                rows={5}
+                className={`w-full p-4 border rounded-lg bg-[var(--surface-0)] text-[var(--text-primary)] resize-none focus:ring-2 focus:ring-[var(--accent-primary)]/50 outline-none transition-all focus-ring ${errors.message ? "border-red-500" : "border-[var(--border-color)]"
+                  }`}
+                autoComplete="off"
+                disabled={isDisabled}
+                {...register("message")}
+              />
+              {errors.message && (
+                <span className="text-red-500 text-sm mt-1">{errors.message.message}</span>
+              )}
+            </div>
 
             <div className="flex justify-center my-2">
               <ReCAPTCHA
                 ref={recaptchaRef}
                 sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                theme="dark" // Optional: matches your portfolio style
+                theme="dark"
               />
             </div>
 
             <motion.button
-              whileHover={{ scale: (loading || verificationLoading) ? 1 : 1.02 }}
-              whileTap={{ scale: (loading || verificationLoading) ? 1 : 0.98 }}
+              whileHover={{ scale: isDisabled ? 1 : 1.02 }}
+              whileTap={{ scale: isDisabled ? 1 : 0.98 }}
               type="submit"
-              disabled={loading || verificationLoading}
+              disabled={isDisabled}
               className={`group mt-4 font-bold py-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 focus-ring
                 ${loading
                   ? "bg-gray-400 cursor-not-allowed"
@@ -182,4 +189,4 @@ function Contact({ form, handleSubmit, handleChange, loading, verificationLoadin
   );
 }
 
-export default Contact
+export default Contact;
