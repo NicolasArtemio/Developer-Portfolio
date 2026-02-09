@@ -118,6 +118,9 @@
     "other_options_text": "If you prefer to contact me directly, here is my information:"
   },
   "footer": {
+    "tagline": "Transforming ideas into exceptional digital experiences.",
+    "quick_links": "Quick Links",
+    "download_cv": "Download CV",
     "copyright": "© {{year}} <span className=\"text-[#1F1D2B]\">Nicolás</span> — <span className=\"ml-1\">Fullstack Developer</span>",
     "status": "Available for Projects"
   }
