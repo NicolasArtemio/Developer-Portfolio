@@ -76,7 +76,7 @@ function Footer() {
 
             {/* Download CV Button */}
             <motion.a
-              href="/NicolasArtemioDumeCv_en.pdf"
+              href="/nicolascv.pdf"
               download
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
