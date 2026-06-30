@@ -1,7 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faDownload } from "@fortawesome/free-solid-svg-icons";
+import {
+  GithubLogoIcon,
+  LinkedinLogoIcon,
+  PaperPlaneTiltIcon,
+  DownloadSimpleIcon,
+} from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 
 function Footer() {
@@ -10,17 +13,17 @@ function Footer() {
 
   const socialLinks = [
     {
-      icon: faGithub,
+      icon: GithubLogoIcon,
       href: "https://github.com/NicolasArtemio",
       label: "GitHub",
     },
     {
-      icon: faLinkedin,
+      icon: LinkedinLogoIcon,
       href: "https://www.linkedin.com/in/nicolasartemio/",
       label: "LinkedIn",
     },
     {
-      icon: faEnvelope,
+      icon: PaperPlaneTiltIcon,
       href: "mailto:nicolasartemiodume@gmail.com",
       label: "Email",
     },
@@ -83,7 +86,7 @@ function Footer() {
                   whileTap={{ scale: 0.95 }}
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--surface-1)] border border-[var(--border-color)] text-[var(--text-primary)]/70 hover:text-[var(--accent-primary)] hover:border-[var(--accent-primary)]/50 transition-all duration-300"
                 >
-                  <FontAwesomeIcon icon={social.icon} className="text-lg" />
+                  <social.icon className="text-lg" />
                 </motion.a>
               ))}
             </div>
@@ -96,7 +99,7 @@ function Footer() {
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--accent-primary)] text-white font-bold text-sm shadow-lg shadow-[var(--accent-primary)]/20 hover:shadow-[var(--accent-primary)]/40 transition-shadow duration-300"
             >
-              <FontAwesomeIcon icon={faDownload} className="text-xs" />
+              <DownloadSimpleIcon className="text-xs" />
               {t("footer.download_cv", "Descargar CV")}
             </motion.a>
           </div>

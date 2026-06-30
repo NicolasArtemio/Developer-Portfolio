@@ -1,6 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { LinkedinLogoIcon } from "@phosphor-icons/react";
 import { useTranslation } from "react-i18next";
 
 const containerVariants: Variants = {
@@ -128,7 +127,7 @@ const ReferencesSection = () => {
                     aria-label={`${ref.name}'s LinkedIn profile`}
                     className="text-[var(--text-primary)]/40 hover:text-[#0077B5] text-2xl focus-ring rounded-md p-1 transition-colors duration-300"
                   >
-                    <FontAwesomeIcon icon={faLinkedin} />
+                    <LinkedinLogoIcon />
                   </motion.a>
                 </div>
               </motion.div>
