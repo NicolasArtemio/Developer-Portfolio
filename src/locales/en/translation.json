@@ -15,7 +15,7 @@
   },
   "hero": {
     "role": "Fullstack Dev",
-    "tagline": "Developing complete end-to-end solutions.",
+    "tagline": "From idea to deploy, no fluff",
     "architecture": "Clean Architecture",
     "cta_button": "View Featured Projects"
   },
@@ -41,11 +41,7 @@
     {
       "title": "AI Barbering & Loyalty",
       "description": "A comprehensive management platform featuring automated marketing, a rewards dashboard, and a seamless user experience.",
-      "technologies": [
-        "SVELTE",
-        "CALENDLY",
-        "CSS/TAILWIND"
-      ],
+      "technologies": ["SVELTE", "CALENDLY", "CSS/TAILWIND"],
       "imageSrc": "/barber.png",
       "liveUrl": "https://labarber-rho.vercel.app/",
       "repoUrl": "https://github.com/nicod12/labarber"
@@ -53,10 +49,7 @@
     {
       "title": "BAS Pet Shop",
       "description": "E-commerce platform for a local pet shop",
-      "technologies": [
-        "REACT",
-        "FIREBASE"
-      ],
+      "technologies": ["REACT", "FIREBASE"],
       "imageSrc": "/sp.png",
       "liveUrl": "https://frontend-basv1.vercel.app/",
       "repoUrl": "https://github.com/NicolasArtemio/frontend-basv1"
@@ -125,3 +118,4 @@
     "status": "Available for Projects"
   }
 }
+

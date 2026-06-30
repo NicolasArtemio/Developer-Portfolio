@@ -9,9 +9,21 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: faGithub, href: "https://github.com/NicolasArtemio", label: "GitHub" },
-    { icon: faLinkedin, href: "https://www.linkedin.com/in/nicolasartemio/", label: "LinkedIn" },
-    { icon: faEnvelope, href: "mailto:nicolasartemiodume@gmail.com", label: "Email" },
+    {
+      icon: faGithub,
+      href: "https://github.com/NicolasArtemio",
+      label: "GitHub",
+    },
+    {
+      icon: faLinkedin,
+      href: "https://www.linkedin.com/in/nicolasartemio/",
+      label: "LinkedIn",
+    },
+    {
+      icon: faEnvelope,
+      href: "mailto:nicolasartemiodume@gmail.com",
+      label: "Email",
+    },
   ];
 
   const navLinks = [
@@ -25,14 +37,16 @@ function Footer() {
       {/* Main Content */}
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-
           {/* Logo & Description */}
           <div className="space-y-4">
             <div className="text-[var(--text-primary)] font-black text-2xl tracking-tighter">
               Nico<span className="text-[var(--accent-primary)]">Dev</span>
             </div>
             <p className="text-sm text-[var(--text-primary)]/60 max-w-xs leading-relaxed">
-              {t("footer.tagline", "Transformando ideas en experiencias digitales excepcionales.")}
+              {t(
+                "footer.tagline",
+                "Transformando ideas en experiencias digitales excepcionales.",
+              )}
             </p>
           </div>
 
@@ -80,7 +94,7 @@ function Footer() {
               download
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] text-white font-bold text-sm shadow-lg shadow-[var(--accent-secondary)]/20 hover:shadow-[var(--accent-secondary)]/40 transition-shadow duration-300"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--accent-primary)] text-white font-bold text-sm shadow-lg shadow-[var(--accent-primary)]/20 hover:shadow-[var(--accent-primary)]/40 transition-shadow duration-300"
             >
               <FontAwesomeIcon icon={faDownload} className="text-xs" />
               {t("footer.download_cv", "Descargar CV")}
@@ -97,7 +111,11 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* Copyright */}
           <div className="text-[var(--text-primary)]/50 text-sm">
-            © {currentYear} <span className="text-[var(--text-primary)]/70">Nicolás Artemio</span> • Fullstack Developer
+            © {currentYear}{" "}
+            <span className="text-[var(--text-primary)]/70">
+              Nicolás Artemio
+            </span>{" "}
+            • Fullstack Developer
           </div>
 
           {/* Status */}

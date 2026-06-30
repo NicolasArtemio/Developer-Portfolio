@@ -61,14 +61,20 @@ body.dark .section-decor {
 h1,
 h2,
 h3,
-h4,
+h4 {
+  font-family: var(--font-heading) !important;
+  color: var(--text-primary) !important;
+}
+
 p,
 span,
 label {
+  font-family: var(--font-body) !important;
   color: var(--text-primary) !important;
 }
 
 body {
+  font-family: var(--font-body) !important;
   background-color: var(--bg-primary) !important;
   color: var(--text-primary) !important;
   border-color: var(--border-color) !important;

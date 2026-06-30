@@ -15,7 +15,7 @@
   },
   "hero": {
     "role": "Fullstack Dev",
-    "tagline": "Desarrollando soluciones completas de extremo a extremo.",
+    "tagline": "Del brief al deploy, sin vueltas.",
     "architecture": "Arquitectura Limpia",
     "cta_button": "Ver Proyectos Destacados"
   },
@@ -41,11 +41,7 @@
     {
       "title": "Tulook: Barbería & Fidelización AI",
       "description": "Plataforma de gestión integral con marketing automatizado, panel de recompensas y experiencia de usuario fluida.",
-      "technologies": [
-        "SVELTE",
-        "CALENDLY",
-        "CSS/TAILWIND"
-      ],
+      "technologies": ["SVELTE", "CALENDLY", "CSS/TAILWIND"],
       "imageSrc": "/barber.png",
       "liveUrl": "https://labarber-rho.vercel.app/",
       "repoUrl": "https://github.com/nicod12/labarber"
@@ -53,12 +49,7 @@
     {
       "title": "BAS Pet Shop",
       "description": "Sistema de e-commerce para una tienda de mascotas local",
-      "technologies": [
-        "HTML5",
-        "CSS3",
-        "Bootstrap",
-        "JavaScript"
-      ],
+      "technologies": ["HTML5", "CSS3", "Bootstrap", "JavaScript"],
       "imageSrc": "/sp.png",
       "liveUrl": "https://frontend-basv1.vercel.app/",
       "repoUrl": "https://github.com/NicolasArtemio/frontend-basv1"
@@ -128,3 +119,4 @@
     "status": "Disponible para Proyectos"
   }
 }
+

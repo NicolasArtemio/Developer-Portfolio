@@ -1,5 +1,10 @@
-import { Github, Linkedin, ArrowRightCircle } from "lucide-react";
+import {
+  GithubLogoIcon,
+  LinkedinLogoIcon,
+  ArrowCircleRightIcon,
+} from "@phosphor-icons/react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const { t } = useTranslation();
@@ -7,66 +12,80 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      /* Cambiado: bg-transparent para que no use surface-1-dark (que es azul oscuro) en modo light */
-      className="flex flex-col items-center justify-center text-[var(--text-primary)] bg-transparent mt-16 md:mt-0"
+      className="flex flex-col items-center justify-center text-[var(--text-primary)] bg-transparent min-h-[calc(100vh-64px)] mt-16 md:mt-0"
     >
-      <div className="text-left font-sans space-y-4 max-w-xl">
-        
-        {/* Título: Eliminamos el color fijo #321a3f y usamos la variable del tema */}
-        <h1
-          id="hero-heading"
-          className="text-5xl font-bold flex flex-wrap items-center mb-6 w-full text-center text-[var(--text-primary)]"
+      <div className="flex flex-col items-center text-center space-y-6 max-w-xl">
+        {/* Foto */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="relative group"
         >
-          <span className="mr-4">{`>`}</span>
-          <span>Nicolás</span>
-          <span className="mx-2">|</span>
-          <span>{t("hero.role")}</span>
-        {/* Cursor: Now uses CSS animation class */}
-        <span className="w-3 h-12 bg-[var(--text-primary)] hidden md:inline-block ml-2 animate-blink"></span>
-      </h1>
+          <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent-secondary)] to-[var(--accent-primary)] rounded-[2.2rem] blur opacity-20 group-hover:opacity-40 transition duration-700" />
+          <img
+            src="/perfil.png"
+            alt="Foto de perfil de Nicolás Dume"
+            loading="eager"
+            fetchPriority="high"
+            className="h-48 w-48 object-cover rounded-[1.5rem] shadow-xl grayscale hover:grayscale-0 transition-all duration-500"
+          />
+        </motion.div>
 
-        {/* Subtitle with improved contrast */}
-        <p className="text-xl text-center text-[var(--text-primary)] opacity-90">
-          React <span className="font-bold">+</span> NestJS{" "}
-          <span className="font-bold">+</span> {t("hero.architecture")}
+        {/* Nombre y rol */}
+        <div className="space-y-2">
+          <h1
+            id="hero-heading"
+            className="text-5xl font-bold text-[var(--text-primary)]"
+          >
+            Nicolás Artemio Dume
+          </h1>
+          <p className="text-xl font-medium text-[var(--text-primary)] opacity-70">
+            {t("hero.role")}
+          </p>
+        </div>
+
+        {/* Stack */}
+        <p className="text-base text-[var(--text-primary)] opacity-60">
+          React · NestJS · {t("hero.architecture")}
         </p>
 
-        {/* Tagline with better semantic structure */}
-        <p className="text-[var(--text-primary)]/60 dark:text-[var(--text-primary)]/70 text-center italic text-base">
+        {/* Tagline */}
+        <p className="text-sm text-[var(--text-primary)]/50 italic">
           {t("hero.tagline")}
         </p>
 
-        {/* Social Icons with improved accessibility */}
-        <div className="flex justify-center space-x-6 pt-6">
+        {/* Iconos sociales */}
+        <div className="flex justify-center space-x-6 pt-2">
           <a
             href="https://github.com/NicolasArtemio"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
-            className="text-[var(--text-primary)] hover:text-[var(--accent-secondary)] transition-all transform hover:scale-110 focus-ring rounded-md p-1"
+            className="text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-all transform hover:scale-110 rounded-md p-1"
           >
-            <Github className="w-8 h-8" />
+            <GithubLogoIcon className="w-7 h-7" />
           </a>
+
           <a
             href="https://www.linkedin.com/in/nicolas-artemio-dume-626223371/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile"
-            className="text-[var(--text-primary)] hover:text-[var(--accent-secondary)] transition-all transform hover:scale-110 focus-ring rounded-md p-1"
+            className="text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-all transform hover:scale-110 rounded-md p-1"
           >
-            <Linkedin className="w-8 h-8" />
+            <LinkedinLogoIcon className="w-7 h-7" />
           </a>
         </div>
 
-        {/* CTA Button with theme variables */}
-        <div className="pt-12 flex justify-center">
+        {/* CTA */}
+        <div className="pt-4">
           <a
             href="#projects"
-            aria-label={t("hero.cta_button")}
-            className="px-8 py-4 bg-[var(--accent-primary)] text-white font-extrabold rounded-xl shadow-lg shadow-[var(--accent-primary)]/20 hover:bg-[var(--accent-primary)]/90 transition-all btn-hover-lift flex items-center justify-center w-fit focus-ring"
+            className="px-8 py-4 bg-[var(--accent-primary)] text-white font-bold rounded-xl shadow-lg hover:bg-[var(--accent-primary)]/90 transition-all flex items-center gap-2"
           >
             {t("hero.cta_button")}
-            <ArrowRightCircle className="w-5 h-5 ml-2" />
+            <ArrowCircleRightIcon className="w-5 h-5" />
           </a>
         </div>
       </div>
