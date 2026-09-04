@@ -39,12 +39,12 @@
   },
   "projectd": [
     {
-      "title": "AI Barbering & Loyalty",
-      "description": "A comprehensive management platform featuring automated marketing, a rewards dashboard, and a seamless user experience.",
+      "title": "Gortari Properties",
+      "description": "Real estate management platform",
       "technologies": ["SVELTE", "CALENDLY", "CSS/TAILWIND"],
-      "imageSrc": "/barber.png",
-      "liveUrl": "https://labarber-rho.vercel.app/",
-      "repoUrl": "https://github.com/nicod12/labarber"
+      "imageSrc": "/inmobiliaria.png",
+      "liveUrl": "https://nancygortaripropiedades.com.ar/",
+      "repoUrl": "https://github.com/NicolasArtemio"
     },
     {
       "title": "BAS Pet Shop",
@@ -118,4 +118,3 @@
     "status": "Available for Projects"
   }
 }
-
