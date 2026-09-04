@@ -58,15 +58,15 @@ const Navbar = () => {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="nav-container">
         <motion.h1
           whileHover={{ scale: 1.05 }}
-          className="text-[var(--accent-primary)] text-2xl font-black tracking-tighter cursor-pointer focus-ring rounded-md p-1"
+          className="nav-logo text-[var(--accent-primary)] text-2xl font-black tracking-tighter cursor-pointer focus-ring rounded-md p-1"
         >
           Nico<span className="text-[var(--text-primary)]">Dev</span>
         </motion.h1>
 
-        <div className="hidden md:flex space-x-8 items-center text-sm font-bold uppercase tracking-widest">
+        <div className="nav-links hidden md:flex space-x-8 items-center text-sm font-bold uppercase tracking-widest">
           {[
             { name: t("navbar.home"), href: "#home" },
             { name: t("navbar.projects"), href: "#projects" },
@@ -95,8 +95,8 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-        <div className="flex items-center gap-4">
-          <div className="p-1 rounded-xl transition-all duration-300 border border-[var(--border-color)] bg-[var(--surface-0)] focus-within:ring-2 focus-within:ring-[var(--accent-primary)]">
+        <div className="nav-controls">
+          <div className="nav-lang">
             <LanguageSwitcher />
           </div>
           <button
@@ -105,7 +105,7 @@ const Navbar = () => {
               theme === "dark" ? "theme.light_mode" : "theme.dark_mode",
             )}
             onClick={toggleTheme}
-            className="p-2 rounded-xl transition-all duration-300 border border-[var(--border-color)] bg-[var(--surface-0)] text-[var(--text-primary)] hover:scale-105 hover:bg-[var(--accent-primary)]/10 focus-ring"
+            className="nav-toggle p-2 rounded-xl transition-all duration-300 border border-[var(--border-color)] bg-[var(--surface-0)] text-[var(--text-primary)] hover:scale-105 hover:bg-[var(--accent-primary)]/10 focus-ring"
             title={t(theme === "dark" ? "theme.light_mode" : "theme.dark_mode")}
           >
             {theme === "dark" ? (

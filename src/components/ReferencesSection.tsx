@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
-import { LinkedinLogoIcon } from "@phosphor-icons/react";
+import { CaretDown, CaretUp, LinkedinLogoIcon } from "@phosphor-icons/react";
 import { useTranslation } from "react-i18next";
 
 const containerVariants: Variants = {
@@ -38,6 +39,22 @@ const ReferencesSection = () => {
     position: string;
     quote: string;
   }>;
+
+  const [expandedQuotes, setExpandedQuotes] = useState<Set<number>>(
+    new Set(),
+  );
+
+  const toggleQuote = (index: number) => {
+    setExpandedQuotes((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
+      return next;
+    });
+  };
 
   const extraInfo = [
     {
@@ -105,9 +122,32 @@ const ReferencesSection = () => {
                 </span>
 
                 {/* Cita */}
-                <p className="text-base text-[var(--text-primary)]/70 italic mb-6 leading-relaxed line-clamp-5">
+                <p
+                  id={`quote-${index}`}
+                  className={`text-base text-[var(--text-primary)]/70 italic leading-relaxed ${
+                    expandedQuotes.has(index) ? "" : "quote-clamp"
+                  }`}
+                >
                   {ref.quote}
                 </p>
+
+                {/* Toggle expand/collapse */}
+                <button
+                  type="button"
+                  onClick={() => toggleQuote(index)}
+                  aria-expanded={expandedQuotes.has(index)}
+                  aria-controls={`quote-${index}`}
+                  className="inline-flex items-center gap-1 self-start mt-2 mb-6 text-sm font-semibold text-[var(--accent-primary)] hover:text-[var(--accent-secondary)] focus-ring rounded-md px-1 py-0.5 transition-colors duration-200"
+                >
+                  {expandedQuotes.has(index)
+                    ? t("references.read_less")
+                    : t("references.read_more")}
+                  {expandedQuotes.has(index) ? (
+                    <CaretUp size={14} weight="bold" aria-hidden="true" />
+                  ) : (
+                    <CaretDown size={14} weight="bold" aria-hidden="true" />
+                  )}
+                </button>
 
                 {/* Footer */}
                 <div className="flex items-center justify-between mt-auto border-t border-[var(--border-color)] pt-5">

@@ -79,6 +79,8 @@
   "references": {
     "title": "Referencias",
     "tagline": "Lo que dicen mis colegas sobre trabajar conmigo en equipo.",
+    "read_more": "Ver más",
+    "read_less": "Ver menos",
     "reference": [
       {
         "name": "Jonathan Padin",

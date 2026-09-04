@@ -207,3 +207,144 @@ body.dark .reference-card {
 .card-glow:hover::before {
   opacity: 0.3;
 }
+/* ===========================================
+   NAVBAR - responsive layout (mobile-first)
+   =========================================== */
+.nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 80rem; /* keeps the nav content inside its rounded container */
+  margin-inline: auto;
+  padding-inline: 1rem; /* 16px */
+}
+
+.nav-logo {
+  order: 1;
+}
+
+.nav-links {
+  order: 2; /* display is handled by Tailwind's `hidden md:flex` */
+}
+
+/* Single-row default: language selector + theme toggle grouped on the right. */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  order: 3;
+}
+
+.nav-lang {
+  order: 0;
+}
+
+.nav-toggle {
+  order: 0;
+  margin-left: 0.75rem; /* 12px minimum separation from the language selector */
+}
+
+/* --- Very small phones: two rows (logo + toggle / language full width) --- */
+@media (max-width: 480px) {
+  .nav-controls {
+    display: contents; /* children join the outer flex line and can re-order */
+  }
+
+  .nav-lang {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* or: center */
+  }
+
+  .nav-toggle {
+    order: 2;
+    margin-left: 0;
+  }
+}
+
+/* --- Tablet and up: slightly more breathing room on the sides --- */
+@media (min-width: 481px) {
+  .nav-container {
+    padding-inline: 1.25rem; /* 20px */
+  }
+}
+
+/* ===========================================
+   LANGUAGE SWITCHER - compact pill
+   =========================================== */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem;
+  border-radius: 9999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-color);
+  line-height: 1;
+}
+
+.lang-switcher__icon {
+  color: var(--text-primary);
+  opacity: 0.8;
+  flex-shrink: 0;
+  margin-inline: 0.125rem;
+}
+
+.lang-switcher__label {
+  display: none; /* hidden on mobile; the globe icon replaces it */
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  opacity: 0.7;
+  margin-right: 0.25rem;
+}
+
+.lang-switcher__btn {
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-switcher__btn:hover {
+  background: color-mix(in srgb, var(--accent-primary) 12%, transparent);
+}
+
+.lang-switcher__btn--active {
+  background: #a75ec1;
+  color: #fff;
+  font-weight: 700;
+}
+
+.lang-switcher__btn--active:hover {
+  background: #a75ec1;
+}
+
+.lang-switcher__sep {
+  color: var(--text-primary);
+  opacity: 0.4;
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+/* --- Show the "Idioma:" label again on larger screens --- */
+@media (min-width: 481px) {
+  .lang-switcher__label {
+    display: inline;
+  }
+}
+
+/* ===========================================
+   TESTIMONIAL QUOTE - collapsed state (4 lines)
+   Toggled off when the user clicks "Ver más".
+   =========================================== */
+.quote-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

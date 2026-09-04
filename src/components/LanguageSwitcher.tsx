@@ -1,42 +1,51 @@
 import { useTranslation } from "react-i18next";
+import { Globe } from "@phosphor-icons/react";
 
 const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const changeLanguage = (lng: "es" | "en") => {
     i18n.changeLanguage(lng);
   };
 
-  const { t } = useTranslation();
-  const isActive = (lng: string) =>
-    i18n.language === lng
-      ? "bg-[#a75ec1] text-white font-bold"
-      : "bg-gray-700 text-white hover:bg-gray-600";
   return (
-    <div role="group" aria-label="Selector de idioma">
-      <span className="mr-2 text-sm text-gray-400">
-        {t("translation.lang")}:
-      </span>
+    <div
+      role="group"
+      aria-label={t("translation.lang")}
+      className="lang-switcher"
+    >
+      <Globe
+        size={16}
+        className="lang-switcher__icon"
+        aria-hidden="true"
+        focusable="false"
+      />
+      <span className="lang-switcher__label">{t("translation.lang")}:</span>
       <button
         type="button"
         onClick={() => changeLanguage("es")}
         aria-pressed={i18n.language === "es"}
-        className={`px-3 py-1 rounded ${isActive("es")}`}
+        lang="es"
+        className={`lang-switcher__btn${
+          i18n.language === "es" ? " lang-switcher__btn--active" : ""
+        }`}
       >
         ES
       </button>
+      <span className="lang-switcher__sep" aria-hidden="true">
+        |
+      </span>
       <button
         type="button"
         onClick={() => changeLanguage("en")}
         aria-pressed={i18n.language === "en"}
-        className={`px-3 py-1 rounded ${isActive("en")}`}
+        lang="en"
+        className={`lang-switcher__btn${
+          i18n.language === "en" ? " lang-switcher__btn--active" : ""
+        }`}
       >
         EN
       </button>
-
-      <small className="ml-2 text-[#a75ec1]">
-        ({i18n.language.toUpperCase()})
-      </small>
     </div>
   );
 };
