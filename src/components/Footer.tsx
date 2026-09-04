@@ -90,18 +90,6 @@ function Footer() {
                 </motion.a>
               ))}
             </div>
-
-            {/* Download CV Button */}
-            <motion.a
-              href="/nicolascv.pdf"
-              download
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--accent-primary)] text-white font-bold text-sm shadow-lg shadow-[var(--accent-primary)]/20 hover:shadow-[var(--accent-primary)]/40 transition-shadow duration-300"
-            >
-              <DownloadSimpleIcon className="text-xs" />
-              {t("footer.download_cv", "Descargar CV")}
-            </motion.a>
           </div>
         </div>
       </div>
