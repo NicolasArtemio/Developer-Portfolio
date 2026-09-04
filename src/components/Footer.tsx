@@ -3,7 +3,6 @@ import {
   GithubLogoIcon,
   LinkedinLogoIcon,
   PaperPlaneTiltIcon,
-  DownloadSimpleIcon,
 } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 
