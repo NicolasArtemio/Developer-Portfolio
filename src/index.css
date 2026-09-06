@@ -246,32 +246,6 @@ body.dark .reference-card {
   margin-left: 0.75rem; /* 12px minimum separation from the language selector */
 }
 
-/* --- Very small phones: two rows (logo + toggle / language full width) --- */
-@media (max-width: 480px) {
-  .nav-controls {
-    display: contents; /* children join the outer flex line and can re-order */
-  }
-
-  .nav-lang {
-    order: 3;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end; /* or: center */
-  }
-
-  .nav-toggle {
-    order: 2;
-    margin-left: 0;
-  }
-}
-
-/* --- Tablet and up: slightly more breathing room on the sides --- */
-@media (min-width: 481px) {
-  .nav-container {
-    padding-inline: 1.25rem; /* 20px */
-  }
-}
-
 /* ===========================================
    LANGUAGE SWITCHER - compact pill
    =========================================== */
@@ -331,8 +305,81 @@ body.dark .reference-card {
   user-select: none;
 }
 
-/* --- Show the "Idioma:" label again on larger screens --- */
-@media (min-width: 481px) {
+/* ===========================================
+   NAVBAR — MOBILE ONLY (≤768px, below Tailwind's `md:`)
+   Everything in this block applies exclusively to mobile.
+   Desktop/tablet (≥768px) layout is NOT modified.
+   Kept AFTER the base navbar/lang-switcher rules so its
+   overrides win the cascade inside the media query.
+   =========================================== */
+@media (max-width: 767.98px) {
+  /* Single flex row: logo on the left, controls on the right. */
+  .nav-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem; /* 16px: nothing touches the screen edges */
+  }
+
+  /* Controls grouped on the right; 8px gap (tighter than desktop's 12px). */
+  .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Theme toggle: fixed 36×36 box, icon perfectly centered so it lines
+     up with the language pill instead of sitting higher/lower. */
+  .nav-toggle {
+    margin-left: 0; /* separation now comes from .nav-controls gap */
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Language pill: same 36px height as the toggle, uniform padding
+     inside the capsule. */
+  .lang-switcher {
+    height: 2.25rem;
+    padding: 0.1875rem; /* uniform 3px inside the pill */
+    flex-shrink: 0;
+  }
+
+  /* Slightly smaller font/padding so ES/EN fit comfortably on mobile. */
+  .lang-switcher__btn {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    font-size: 0.6875rem; /* 11px */
+  }
+
+  /* Active option keeps its solid accent bg + white text; the inactive
+     one gets less visual weight. */
+  .lang-switcher__btn:not(.lang-switcher__btn--active) {
+    opacity: 0.65;
+  }
+
+  .lang-switcher__sep {
+    font-size: 0.6875rem;
+  }
+}
+
+/* --- Desktop/tablet (md and up): slightly more breathing room on the sides --- */
+@media (min-width: 768px) {
+  .nav-container {
+    padding-inline: 1.25rem; /* 20px */
+  }
+}
+
+/* --- Show the "Idioma:" label again on desktop/tablet (hidden on
+     mobile ≤768px, where the globe icon replaces it to save space) --- */
+@media (min-width: 768px) {
   .lang-switcher__label {
     display: inline;
   }
